@@ -1,14 +1,27 @@
 <template>
-  <img class="flower-shower" :src="imageUrl" :style="cssVars" alt="sakura" />
+  <img class="flower-shower" :src="require(`@/assets/leaves/leaf_${selectedImage}.png`)"
+       :style="cssVars"
+       alt="sakura" />
 </template>
 
 <script>
 
 export default {
   name: 'FlowerShower',
-  data: () => ({
-    //
-  }),
+  data() {
+    return {
+      selectedImage: null,
+    };
+  },
+  methods: {
+    randomItem() {
+      const imageNumber = Math.floor(Math.random() * (18 - 1) + 1);
+      return imageNumber;
+    },
+  },
+  created() {
+    this.selectedImage = this.randomItem();
+  },
   computed: {
     cssVars() {
       const fallDelay = Math.random() * 12;
@@ -29,10 +42,6 @@ export default {
         '--shake-duration': `${shakeDuration}s`,
         '--image-size': `${imageSize}px`,
       };
-    },
-    imageUrl() {
-      const imageNumber = Math.floor(Math.random() * (18 - 1) + 1);
-      return `/wedding/img/leaves/leaf_${imageNumber}.png`;
     },
   },
 };
