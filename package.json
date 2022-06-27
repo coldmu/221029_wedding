@@ -9,11 +9,16 @@
   },
   "dependencies": {
     "@mdi/font": "5.9.55",
+    "animate.css": "^4.1.1",
+    "aos": "^3.0.0-beta.6",
     "core-js": "^3.8.3",
+    "gsap": "^3.10.4",
     "register-service-worker": "^1.7.2",
     "roboto-fontface": "*",
+    "scrollmagic": "^2.0.8",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
+    "vue-scrollmagic": "^1.2.0",
     "vuetify": "^3.0.0-beta.0",
     "vuex": "^4.0.0",
     "webfontloader": "^1.0.0"
@@ -49,7 +54,7 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {"max-len": 0}
   },
   "browserslist": [
     "> 1%",

@@ -7,8 +7,11 @@ import { loadFonts } from './plugins/webfontloader';
 
 loadFonts();
 
-createApp(App)
-  .use(router)
+// eslint-disable-next-line import/prefer-default-export
+export const app = createApp(App);
+// eslint-disable-next-line new-cap
+// app.AOS = new AOS.init();
+app.use(router)
   .use(store)
   .use(vuetify)
   .mount('#app');
