@@ -1,15 +1,7 @@
 <template>
   <section class="calendar">
     <div class="box">
-      <p>Wedding Invitation</p>
-      <p>초대합니다</p>
-    </div>
-    <br>
-    <div class="box">
-      <p>결혼식 안내문구<br>
-        결혼식 안내문구<br>
-        결혼식 안내문구<br>
-        결혼식 안내문구<br></p>
+      <img :src="require(`@/assets/images/22_October.jpg`)" alt="calendar" class="calendar_img">
     </div>
   </section>
 </template>
@@ -23,7 +15,8 @@ export default {
 
 <style scoped>
 .calendar { position: relative; left: 50%; transform: translateX(-50%); background: #2e7d32;
-  height: 50vh; width: 85vw; max-width: 550px; }
+  width: 85vw; max-width: 550px; display: inline-block;}
 .box { display: flex; justify-content: center; align-items: center; }
 .box { flex-direction: column;}
+.calendar_img { width: 85vw; max-width: 550px;}
 </style>
