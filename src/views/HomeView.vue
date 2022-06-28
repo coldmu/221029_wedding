@@ -1,11 +1,11 @@
 <template>
-  <StoryGallery/>
-  <Opening/>
-  <MainGallery/>
-  <Calendar/>
-  <Location/>
-  <Contact/>
-  <Closing/>
+    <StoryGallery/>
+    <Opening/>
+    <MainGallery/>
+    <Calendar/>
+    <Location/>
+    <Contact/>
+    <Closing/>
 </template>
 
 <script>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <v-app>
     <v-main>
@@ -10,10 +11,16 @@
 
 <script>
 // import FlowerShower from './components/FlowerShower.vue';
+// eslint-disable-next-line
+import { $vfm, VueFinalModal, ModalsContainer } from 'vue-final-modal';
 
 export default {
   name: 'App',
   components: {
+    // eslint-disable-next-line
+    VueFinalModal,
+    // eslint-disable-next-line
+    ModalsContainer,
     // FlowerShower,
   },
   data: () => ({

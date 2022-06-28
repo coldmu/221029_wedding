@@ -1,7 +1,8 @@
 <template>
   <section class="mainGallery">
   <div class="box">
-    <p>Main Gallery</p>
+    <p>양준희 오옥순 의 아들 양찬무</p>
+    <p>박석곤 유미영 의 딸 박혜진</p>
   </div>
   </section>
 </template>

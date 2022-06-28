@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { vfmPlugin } from 'vue-final-modal';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -14,4 +15,9 @@ export const app = createApp(App);
 app.use(router)
   .use(store)
   .use(vuetify)
+  .use(vfmPlugin({
+    key: '$vfm',
+    componentName: 'VueFinalModal',
+    dynamicContainerName: 'ModalsContainer',
+  }))
   .mount('#app');
