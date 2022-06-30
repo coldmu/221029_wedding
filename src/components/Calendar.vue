@@ -14,8 +14,14 @@ export default {
 </script>
 
 <style scoped>
-.calendar { position: relative; left: 50%; transform: translateX(-50%); background: #2e7d32;
-  width: 85vw; max-width: 550px; display: inline-block;}
+.calendar {
+  position: relative;
+  /*background: #2e7d32;*/
+  height: auto;
+  width: 85vw;
+  max-width: 550px;
+  padding: 0 2%;
+}
 .box { display: flex; justify-content: center; align-items: center; }
 .box { flex-direction: column;}
 .calendar_img { width: 85vw; max-width: 550px;}

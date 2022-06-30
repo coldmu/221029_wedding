@@ -37,7 +37,7 @@ export default {
           scrub: 3,
           start: 'top top',
           end: '+=3000',
-          markers: true,
+          // markers: true,
         },
       });
       t1.from(

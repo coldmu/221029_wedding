@@ -43,4 +43,9 @@ export default {
   font-weight: normal;
   font-style: normal;
 }
+
+body {
+  font-family: 'Cafe24Oneprettynight';
+}
+
 </style>

@@ -1,6 +1,11 @@
 <template>
   <section class="location">
-    <div id="map" style="width:100%;height:350px;">asdf</div>
+    <div class="titleFrame">
+      <p class="contentSubTitle">Location</p>
+      <p class="contentTitle">오시는 길</p>
+    </div>
+
+    <div id="map" style="width:100%;height:350px;"></div>
   </section>
 </template>
 
@@ -100,16 +105,16 @@ export default {
 </script>
 
 <style>
-.location { position: relative; left: 50%; transform: translateX(-50%); background: #9575cd;
-  height: 50vh; width: 85vw; max-width: 550px; }
+.location {
+  position: relative;
+  /*background: #9575cd;*/
+  height: auto;
+  width: 85vw;
+  max-width: 550px;
+  padding: 0 2%;
+}
 .box { display: flex; justify-content: center; align-items: center; }
 .box { flex-direction: column;}
-
-/*.customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}*/
-/*.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}*/
-/*.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}*/
-/*.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}*/
-/*.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}*/
 
 .overlaybox {position:relative;width:360px;height:350px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;padding:15px 10px;}
 .overlaybox div, ul {overflow:hidden;margin:0;padding:0;}

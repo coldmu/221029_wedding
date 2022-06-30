@@ -1,9 +1,9 @@
 <template>
   <section class="mainGallery">
-  <div class="box">
-    <p>양준희 오옥순 의 아들 양찬무</p>
-    <p>박석곤 유미영 의 딸 박혜진</p>
-  </div>
+    <div class="titleFrame">
+      <p class="contentSubTitle">Gallery</p>
+      <p class="contentTitle">사진첩</p>
+    </div>
   </section>
 </template>
 
@@ -14,8 +14,14 @@ export default {
 </script>
 
 <style scoped>
-.mainGallery { position: relative; left: 50%; transform: translateX(-50%); background: #e6ee9c;
-  height: 50vh; width: 85vw; max-width: 550px; }
+.mainGallery {
+  position: relative;
+  /*background: #e6ee9c;*/
+  height: auto;
+  width: 85vw;
+  max-width: 550px;
+  padding: 0 2%;
+}
 .box { display: flex; justify-content: center; align-items: center; }
 .box { flex-direction: column;}
 </style>

@@ -1,5 +1,9 @@
 <template>
   <section class="contact">
+    <div class="titleFrame">
+      <p class="contentSubTitle">Contact</p>
+      <p class="contentTitle">연락처 확인하기</p>
+    </div>
     <div class="contactBtn">
     <div class="leftBtn">
     <div class="upperBtn">
@@ -41,25 +45,115 @@
     </div>
   </section>
 
-  <vue-final-modal v-model="showModal" classes="modal-container" content-class="modal-content" :fit-parent="false">
+  <vue-final-modal v-model="showModal" classes="modal-container" content-class="modal-content"
+                   :fit-parent="true">
     <button class="modal__close" @click="showModal = false;">
       <mdi-close></mdi-close>
     </button>
-    <div class="contactFrame">
-    <img :src="contactInfo[contactPerson].url" alt="1" class="contactImg">
-    <span class="contactText">{{contactInfo[contactPerson].name}}</span>
+    <div class="contactModalFrame">
+      <img :src="contactInfo[contactPerson].url" alt="1" class="contactImg">
+      <span class="contactText">{{ contactInfo[contactPerson].name }}</span>
+
+      <input ref="inputPhone" type="hidden" :value="contactInfo[contactPerson].phone"/>
+      <input ref="inputAccount" type="hidden" :value="contactInfo[contactPerson].account"/>
+      <input ref="inputAccountNum" type="hidden" :value="contactInfo[contactPerson].accountNum"/>
+
     </div>
     <div class="contactModalPhone">
-      <p>전화번호</p>
-      <p>{{contactInfo[contactPerson].phone}}</p>
+      <p class="contactModalText">전화번호</p>
+      <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
+      <div class="contactModalCopy">
+        <button class="kakaoBtn" @click="handleCopy('phone')">카카오톡 채팅하기</button>
+        <button class="copyBtn" @click="handleCopy('phone')">전화번호 복사하기</button>
+      </div>
+    </div>
+    <div class="contactModalPhone">
+      <p class="contactModalText">계좌번호</p>
+      <p class="contactModalText">{{ contactInfo[contactPerson].account }}</p>
+      <div class="contactModalCopy">
+        <button class="copyBtn" @click="handleCopy('account')">계좌전체 복사하기</button>
+        <button class="copyBtn" @click="handleCopy('accountNum')">계좌번호 복사하기</button>
+      </div>
     </div>
   </vue-final-modal>
 </template>
 
 <script>
+import { ref } from 'vue';
+
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Contact',
+  setup() {
+    const inputAccount = ref(null);
+    const inputAccountNum = ref(null);
+    const inputPhone = ref(null);
+
+    const handleCopyForIE = (param) => {
+      if (param === 'account') {
+        // hidden이었던 input의 타입을 text로 변경한다.
+        inputAccount.value.setAttribute('type', 'text');
+        // input을 선택한다.
+        inputAccount.value.select();
+        // 복사를 수행한다.
+        document.execCommand('copy');
+        // text 타입을 hidden으로 변경한다.
+        inputAccount.value.setAttribute('type', 'hidden');
+        alert(`'${inputAccount.value.value}'  복사 되었습니다.`);
+      } else if (param === 'accountNum') {
+        // hidden이었던 input의 타입을 text로 변경한다.
+        inputAccountNum.value.setAttribute('type', 'text');
+        // input을 선택한다.
+        inputAccountNum.value.select();
+        // 복사를 수행한다.
+        document.execCommand('copy');
+        // text 타입을 hidden으로 변경한다.
+        inputAccountNum.value.setAttribute('type', 'hidden');
+        alert(`'${inputAccountNum.value.value}'  복사 되었습니다.`);
+      } else if (param === 'phone') {
+        // hidden이었던 input의 타입을 text로 변경한다.
+        inputPhone.value.setAttribute('type', 'text');
+        // input을 선택한다.
+        inputPhone.value.select();
+        // 복사를 수행한다.
+        document.execCommand('copy');
+        // text 타입을 hidden으로 변경한다.
+        inputPhone.value.setAttribute('type', 'hidden');
+        alert(`'${inputPhone.value.value}'  복사 되었습니다.`);
+      }
+    };
+
+    // eslint-disable-next-line
+    const handleCopy = (param) => {
+      // if (inputEl.value === null) { return; }
+      // clipboard를 지원하지 않는다면,
+      // execCommand를 통해 복사할 수 있도록 한다.
+      if (!navigator.clipboard) {
+        handleCopyForIE(param);
+        return;
+      }
+      if (param === 'account') {
+        navigator.clipboard.writeText(inputAccount.value.value)
+          .then(() => alert(`'${inputAccount.value.value}'  복사 되었습니다.`))
+          .catch(() => handleCopyForIE(param));
+      } else if (param === 'accountNum') {
+        navigator.clipboard.writeText(inputAccountNum.value.value)
+          .then(() => alert(`'${inputAccountNum.value.value}'  복사 되었습니다.`))
+          .catch(() => handleCopyForIE(param));
+      } else if (param === 'phone') {
+        navigator.clipboard.writeText(inputPhone.value.value)
+          .then(() => alert(`'${inputPhone.value.value}'  복사 되었습니다.`))
+          .catch(() => handleCopyForIE(param));
+      }
+    };
+    return {
+      handleCopy,
+      handleCopyForIE,
+      inputAccount,
+      inputAccountNum,
+      inputPhone,
+    };
+  },
   data() {
     return {
       showModal: false,
@@ -71,6 +165,7 @@ export default {
           name: '신랑 양찬무',
           phone: '01000000000',
           account: '은행 123123123 (양찬무)',
+          accountNum: '123123123',
         },
         c_dad: {
           // eslint-disable-next-line
@@ -78,6 +173,7 @@ export default {
           name: '아버지 양준희',
           phone: '01000000000',
           account: '은행 123123123 (양준희)',
+          accountNum: '123123123',
         },
         c_mom: {
           // eslint-disable-next-line
@@ -85,6 +181,7 @@ export default {
           name: '어머니 오옥순',
           phone: '01000000000',
           account: '은행 123123123 (양준희)',
+          accountNum: '123123123',
         },
         hyejin: {
           // eslint-disable-next-line
@@ -92,6 +189,7 @@ export default {
           name: '신부 박혜진',
           phone: '01000000000',
           account: '은행 123123123 (박혜진)',
+          accountNum: '123123123',
         },
         h_dad: {
           // eslint-disable-next-line
@@ -99,6 +197,7 @@ export default {
           name: '아버지 박석곤',
           phone: '01000000000',
           account: '은행 123123123 (박석곤)',
+          accountNum: '123123123',
         },
         h_mom: {
           // eslint-disable-next-line
@@ -106,6 +205,7 @@ export default {
           name: '어머니 유미영',
           phone: '01000000000',
           account: '은행 123123123 (박석곤)',
+          accountNum: '123123123',
         },
       },
     };
@@ -114,20 +214,39 @@ export default {
 </script>
 
 <style scoped>
-.contact { position: relative; left: 50%; transform: translateX(-50%); background: #9575cd;
-  height: 50vh; width: 85vw; max-width: 550px; }
+.contact {
+  position: relative;
+  /*background: #9575cd;*/
+  height: auto;
+  width: 85vw;
+  max-width: 550px;
+  margin: 0;
+  padding: 0 2%;
+}
 .contactImg { display:inline-block;
   width:40px;
   height:40px;
   border-radius:9999px;
   background-position:center;
   background-size:cover;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+}
 .contactModalPhone{
+  display: flex;
+  width:100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:5px;
+}
+.contactModalText{
+  font-size:0.9rem;
+  margin:0;
+}
+.contactModalCopy{
   display:flex;
-  text-align: center;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 .upperBtn {display:flex;
   justify-content: center;
@@ -162,10 +281,41 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding:0.5rem;}
-
-.contactText{margin-top:10px;
+  padding:0.5rem;
+}
+.contactModalFrame{display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding:0.5rem;
+  margin-bottom: 8px;
+}
+.contactText {margin-top:10px;
   font-size:0.7rem;}
+
+.copyBtn {padding: 5px 10px;
+  font-size: 0.7rem;
+  border: 0;
+  border-radius: 5px;
+  background: #cecece;
+  display: inline-block;
+  color: #fff;
+  font-family: 'Cafe24Oneprettynight';
+  text-align: left;
+  margin-top: 3px;
+}
+.kakaoBtn{
+  padding: 5px 10px;
+  font-size: 0.7rem;
+  border: 0;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: left;
+  margin-top: 3px;
+  background: #fce445;
+  font-family: 'Cafe24Oneprettynight';
+  color: #202121;
+}
 ::v-deep .modal-container {
   display: flex;
   justify-content: center;
@@ -175,12 +325,12 @@ export default {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0 1rem;
   padding: 1rem;
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
-  width: 500px;
+  width: 75vw;
+  max-width: 500px;
 }
 .modal__title {
   margin: 0 2rem 0 0;
@@ -194,9 +344,10 @@ export default {
 }
 </style>
 
-<style scoped>
+<style>
 .dark-mode div::v-deep .modal-content {
-  border-color: #2d3748;
-  background-color: #1a202c;
+border-color: #2d3748;
+/*background-color: #1a202c;*/
+background-color: #123456;
 }
 </style>
