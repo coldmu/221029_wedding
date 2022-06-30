@@ -157,7 +157,7 @@ export default {
 { margin: 0; }
 body { margin: 0; }
 section { position: relative; height: 100vh;}
-#section2 { overflow: hidden; }
+#section2 { }
 #section3 { background: indianred; }
 #section4 { background: paleturquoise; }
 .horizon_box { position: absolute; top: 0;}
