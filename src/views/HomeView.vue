@@ -1,5 +1,9 @@
 <template>
-    <StoryGallery/>
+
+  <div class="menuDiv">
+    <Menu/>
+  </div>
+  <StoryGallery/>
   <div class="mainFrame">
     <Opening/>
     <MainGallery/>
@@ -7,6 +11,9 @@
     <Location/>
     <Contact/>
     <Closing/>
+  </div>
+  <div class="footerDiv">
+    <Footer/>
   </div>
 </template>
 
@@ -22,6 +29,8 @@ import Calendar from '../components/Calendar.vue';
 import Location from '../components/Location.vue';
 import Contact from '../components/Contact.vue';
 import Closing from '../components/Closing.vue';
+import Menu from '../components/Menu.vue';
+import Footer from '../components/Footer.vue';
 
 export default defineComponent({
   name: 'HomeView',
@@ -35,6 +44,8 @@ export default defineComponent({
     Location,
     Contact,
     Closing,
+    Menu,
+    Footer,
   },
 });
 </script>
@@ -47,6 +58,7 @@ body{
   align-items: center;
 }
 .mainFrame{
+  margin-top: 15px;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -81,5 +93,34 @@ body{
 .content p{
     display: block;
     margin-bottom:10px;
+}
+.menuDiv{
+  font-family: 'KimNamyun';
+  display: flex;
+  width:100%;
+  /*justify-content: space-around;*/
+  align-items: center;
+  /*color:#888;*/
+  text-align: center;
+  position:sticky;
+  top:0px;
+  margin: 0 auto;
+  background: #FFF;
+  z-index:9999;
+}
+
+.footerDiv{
+  font-family: 'KimNamyun';
+  display: flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+  color:#888;
+  text-align: center;
+  position:fixed;
+  max-width: 550px;
+  bottom:0;
+  padding-bottom: 5px;
+  z-index:9999;
 }
 </style>

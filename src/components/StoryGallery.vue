@@ -168,9 +168,9 @@ section { position: relative; height: 100vh;}
 .box2 { height: 100%; }
 .box3 { height: 100%; }
 .box4 { height: 100%; }
-.storyIamgeVertical { height: 85%; background: yellow;}
-.storyIamgeHorizon { width: 85vmin; background: yellow;}
-.storyEnd { height: 85%;}
+.storyIamgeVertical { height: 82vh; background: yellow;}
+.storyIamgeHorizon { width: 150vmin; background: yellow;}
+.storyEnd { height: 82vh;}
 .storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; }
 .storyTextDiv { height: 10%; padding-top: 0.5vh;}
 </style>

@@ -2,8 +2,8 @@
 <template>
   <v-app>
     <v-main>
-<!--      <FlowerShower v-for="n in 18" :key="`leaf-${n}`"/>-->
       <router-view/>
+<!--      <FlowerShower v-for="n in 18" :key="`leaf-${n}`"/>-->
     </v-main>
   </v-app>
 
