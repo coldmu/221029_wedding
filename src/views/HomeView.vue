@@ -3,6 +3,7 @@
   <div class="menuDiv">
     <Menu/>
   </div>
+
   <StoryGallery/>
   <div class="mainFrame">
     <Opening/>
@@ -34,7 +35,6 @@ import Footer from '../components/Footer.vue';
 
 export default defineComponent({
   name: 'HomeView',
-
   components: {
     // eslint-disable-next-line
     StoryGallery,

@@ -40,12 +40,13 @@ export default {
           // markers: true,
         },
       });
-      t1.from(
-        '.box1',
-        {
-          duration: 3, ease: 'easeOutCirc', scale: 0.4, autoAlpha: 0.4,
-        },
-      )
+      t1.to('.menuDiv', { autoAlpha: 0, duration: 1 })
+        .from(
+          '.box1',
+          {
+            duration: 3, ease: 'easeOutCirc', scale: 0.4, autoAlpha: 0.4,
+          },
+        )
         .to({}, { duration: 0.5 })
         .to('.box1', { autoAlpha: 0, duration: 0.5 })
         .from(
@@ -70,8 +71,8 @@ export default {
             duration: 3, ease: 'easeOutCirc', scale: 0.2, autoAlpha: 0,
           },
         )
-        .to({}, { duration: 2 });
-
+        .to('.menuDiv', { autoAlpha: 1, duration: 3 });
+      // .to({}, { duration: 2 });
       // ScrollTrigger.matchMedia({
       //   '(min-width: 768px)': () => {
       //     const t1 = gsap.timeline({
@@ -131,7 +132,6 @@ export default {
 
 <template>
   <section id="section2">
-    <p>section2</p>
     <div class="box_wrapper">
       <div class="box box1 horizon_box">
         <img :src="require(`@/assets/storyImages/1.jpg`)" alt="1" class="storyIamgeVertical">

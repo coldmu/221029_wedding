@@ -28,5 +28,6 @@ export default {
   width: 85vw;
   max-width: 550px;
   padding: 0 2%;
+  margin-top: 20px;
 }
 </style>

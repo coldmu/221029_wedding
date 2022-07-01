@@ -1,5 +1,5 @@
 <template>
-  <section class="contact">
+  <section class="contact" id="contact">
     <div class="titleFrame">
       <p class="contentSubTitle">Contact</p>
       <p class="contentTitle">연락처 확인하기</p>
@@ -220,8 +220,9 @@ export default {
   height: auto;
   width: 85vw;
   max-width: 550px;
-  margin: 0;
+  /*margin: 0;*/
   padding: 0 2%;
+  margin-top: 20px;
 }
 .contactImg { display:inline-block;
   width:40px;

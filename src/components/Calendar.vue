@@ -21,6 +21,7 @@ export default {
   width: 85vw;
   max-width: 550px;
   padding: 0 2%;
+  margin-top: 20px;
 }
 .box { display: flex; justify-content: center; align-items: center; }
 .box { flex-direction: column;}

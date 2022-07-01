@@ -12,10 +12,10 @@
     </div>
     <div class="familyTextFrame">
       <div class="familyText">
-        <strong>양준희 오옥순</strong>의 아들 <splan class="heroText">양찬무</splan>
+        <span><strong>양준희 오옥순</strong></span><span>의 아들</span><span class="heroText">양찬무</span>
       </div>
       <div class="familyText">
-        <strong>박석곤 유미영</strong>의 딸 <splan class="heroText">박혜진</splan>
+        <span><strong>박석곤 유미영</strong></span><span>의 딸</span><span class="heroText">박혜진</span>
       </div>
     </div>
   </section>
@@ -36,15 +36,20 @@ export default {
   width: 85vw;
   max-width: 550px;
   padding: 0 2%;
+  margin-top: 20px;
 }
 
 .familyTextFrame {
 font-weight:600;
 }
 .familyText {
-  text-align: center;
   font-size: 1.15rem;
-  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  margin: 0 auto 10px auto;
+  width: 70%;
+  justify-content: space-between;
 }
 .familyText > strong {
     font-size:1.2rem;

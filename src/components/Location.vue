@@ -1,5 +1,5 @@
 <template>
-  <section class="location">
+  <section class="location" id="location">
     <div class="titleFrame">
       <p class="contentSubTitle">Location</p>
       <p class="contentTitle">오시는 길</p>
@@ -112,6 +112,7 @@ export default {
   width: 85vw;
   max-width: 550px;
   padding: 0 2%;
+  margin-top: 20px;
 }
 .box { display: flex; justify-content: center; align-items: center; }
 .box { flex-direction: column;}
