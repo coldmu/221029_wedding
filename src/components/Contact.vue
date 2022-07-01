@@ -55,25 +55,53 @@
       <span class="contactText">{{ contactInfo[contactPerson].name }}</span>
 
       <input ref="inputPhone" type="hidden" :value="contactInfo[contactPerson].phone"/>
-      <input ref="inputAccount" type="hidden" :value="contactInfo[contactPerson].account"/>
       <input ref="inputAccountNum" type="hidden" :value="contactInfo[contactPerson].accountNum"/>
+      <input ref="inputAccountBank" type="hidden" :value="contactInfo[contactPerson].accountBank"/>
+      <input ref="inputAccountName" type="hidden" :value="contactInfo[contactPerson].accountName"/>
 
     </div>
     <div class="contactModalPhone">
       <p class="contactModalText">전화번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
       <div class="contactModalCopy">
-        <button class="kakaoBtn" @click="handleCopy('phone')">카카오톡 채팅하기</button>
-        <button class="copyBtn" @click="handleCopy('phone')">전화번호 복사하기</button>
+        <button class="copyBtn" @click="handleCopy('phone'); showPhoneCopyModal = true">전화번호 복사하기</button>
       </div>
     </div>
     <div class="contactModalPhone">
       <p class="contactModalText">계좌번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].account }}</p>
       <div class="contactModalCopy">
-        <button class="copyBtn" @click="handleCopy('account')">계좌전체 복사하기</button>
-        <button class="copyBtn" @click="handleCopy('accountNum')">계좌번호 복사하기</button>
+        <button class="copyBtn" @click="handleCopy('account'); showAccountCopyModal = true">계좌번호 복사하기</button>
       </div>
+    </div>
+  </vue-final-modal>
+
+  <!-- Second modal - account -->
+  <vue-final-modal v-model="showAccountCopyModal" classes="modal-container" content-class="modal-copy-content"
+                   :fit-parent="true">
+    <button class="modal__close" @click="showAccountCopyModal = false;">
+      <mdi-close></mdi-close>
+    </button>
+    <div class="copyModalFrame">
+      <p><strong>{{ contactInfo[contactPerson].accountNum }} 만</strong> 복사되었습니다.</p>
+      <p>은행: {{ contactInfo[contactPerson].accountBank }}, 예금주: {{ contactInfo[contactPerson].accountName }} 는 기억해주세요.</p>
+    <div class="modal__action">
+      <v-button @click="confirm">confirm</v-button>
+    </div>
+    </div>
+  </vue-final-modal>
+
+  <!-- Second modal - phone -->
+  <vue-final-modal v-model="showPhoneCopyModal" classes="modal-container" content-class="modal-copy-content"
+                   :fit-parent="true">
+    <button class="modal__close" @click="showPhoneCopyModal = false;">
+      <mdi-close></mdi-close>
+    </button>
+    <div class="copyModalFrame">
+      <p><strong>{{ contactInfo[contactPerson].phone }}</strong> 복사되었습니다.</p>
+    <div class="modal__action">
+      <v-button @click="confirm">confirm</v-button>
+    </div>
     </div>
   </vue-final-modal>
 </template>
@@ -85,22 +113,13 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Contact',
   setup() {
-    const inputAccount = ref(null);
+    const inputAccountBank = ref(null);
+    const inputAccountName = ref(null);
     const inputAccountNum = ref(null);
     const inputPhone = ref(null);
 
     const handleCopyForIE = (param) => {
       if (param === 'account') {
-        // hidden이었던 input의 타입을 text로 변경한다.
-        inputAccount.value.setAttribute('type', 'text');
-        // input을 선택한다.
-        inputAccount.value.select();
-        // 복사를 수행한다.
-        document.execCommand('copy');
-        // text 타입을 hidden으로 변경한다.
-        inputAccount.value.setAttribute('type', 'hidden');
-        alert(`'${inputAccount.value.value}'  복사 되었습니다.`);
-      } else if (param === 'accountNum') {
         // hidden이었던 input의 타입을 text로 변경한다.
         inputAccountNum.value.setAttribute('type', 'text');
         // input을 선택한다.
@@ -109,7 +128,7 @@ export default {
         document.execCommand('copy');
         // text 타입을 hidden으로 변경한다.
         inputAccountNum.value.setAttribute('type', 'hidden');
-        alert(`'${inputAccountNum.value.value}'  복사 되었습니다.`);
+        // alert(`계좌번호 '${inputAccountNum.value.value}' 만 복사 되었습니다.\n은행명: '${inputAccountBank.value.value}', 계좌주: '${inputAccountName.value.value}' 는 기억해주세요!`);
       } else if (param === 'phone') {
         // hidden이었던 input의 타입을 text로 변경한다.
         inputPhone.value.setAttribute('type', 'text');
@@ -119,7 +138,7 @@ export default {
         document.execCommand('copy');
         // text 타입을 hidden으로 변경한다.
         inputPhone.value.setAttribute('type', 'hidden');
-        alert(`'${inputPhone.value.value}'  복사 되었습니다.`);
+        // alert(`'${inputPhone.value.value}'  복사 되었습니다.`);
       }
     };
 
@@ -133,30 +152,36 @@ export default {
         return;
       }
       if (param === 'account') {
-        navigator.clipboard.writeText(inputAccount.value.value)
-          .then(() => alert(`'${inputAccount.value.value}'  복사 되었습니다.`))
-          .catch(() => handleCopyForIE(param));
-      } else if (param === 'accountNum') {
         navigator.clipboard.writeText(inputAccountNum.value.value)
-          .then(() => alert(`'${inputAccountNum.value.value}'  복사 되었습니다.`))
+          // .then(() => alert(`계좌번호: '${inputAccountNum.value.value}' 만 복사 되었습니다.\n은행명: '${inputAccountBank.value.value}', 계좌주: '${inputAccountName.value.value}' 는 기억해주세요!`))
           .catch(() => handleCopyForIE(param));
       } else if (param === 'phone') {
         navigator.clipboard.writeText(inputPhone.value.value)
-          .then(() => alert(`'${inputPhone.value.value}'  복사 되었습니다.`))
+          // .then(() => alert(`'${inputPhone.value.value}'  복사 되었습니다.`))
           .catch(() => handleCopyForIE(param));
       }
     };
     return {
       handleCopy,
       handleCopyForIE,
-      inputAccount,
+      inputAccountBank,
+      inputAccountName,
       inputAccountNum,
       inputPhone,
     };
   },
+  methods: {
+    confirm() {
+      this.showPhoneCopyModal = false;
+      this.showAccountCopyModal = false;
+      this.showModal = false;
+    },
+  },
   data() {
     return {
       showModal: false,
+      showPhoneCopyModal: false,
+      showAccountCopyModal: false,
       contactPerson: 'chanmu',
       contactInfo: {
         chanmu: {
@@ -166,6 +191,8 @@ export default {
           phone: '01000000000',
           account: '은행 123123123 (양찬무)',
           accountNum: '123123123',
+          accountBank: '농협은행',
+          accountName: '양찬무',
         },
         c_dad: {
           // eslint-disable-next-line
@@ -174,6 +201,8 @@ export default {
           phone: '01000000000',
           account: '은행 123123123 (양준희)',
           accountNum: '123123123',
+          accountBank: '농협은행',
+          accountName: '양찬무',
         },
         c_mom: {
           // eslint-disable-next-line
@@ -182,6 +211,8 @@ export default {
           phone: '01000000000',
           account: '은행 123123123 (양준희)',
           accountNum: '123123123',
+          accountBank: '농협은행',
+          accountName: '양찬무',
         },
         hyejin: {
           // eslint-disable-next-line
@@ -190,6 +221,8 @@ export default {
           phone: '01000000000',
           account: '은행 123123123 (박혜진)',
           accountNum: '123123123',
+          accountBank: '농협은행',
+          accountName: '양찬무',
         },
         h_dad: {
           // eslint-disable-next-line
@@ -198,6 +231,8 @@ export default {
           phone: '01000000000',
           account: '은행 123123123 (박석곤)',
           accountNum: '123123123',
+          accountBank: '농협은행',
+          accountName: '양찬무',
         },
         h_mom: {
           // eslint-disable-next-line
@@ -206,6 +241,8 @@ export default {
           phone: '01000000000',
           account: '은행 123123123 (박석곤)',
           accountNum: '123123123',
+          accountBank: '농협은행',
+          accountName: '양찬무',
         },
       },
     };
@@ -291,6 +328,13 @@ export default {
   padding:0.5rem;
   margin-bottom: 8px;
 }
+.copyModalFrame{display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*padding:0.5rem;*/
+  /*margin-bottom: 8px;*/
+}
 .contactText {margin-top:10px;
   font-size:0.7rem;}
 
@@ -332,6 +376,24 @@ export default {
   background: #fff;
   width: 75vw;
   max-width: 500px;
+}
+::v-deep .modal-copy-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.25rem;
+  background: #fff;
+  width: 60vw;
+  max-width: 450px;
+}
+.modal__action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 1rem 0 0;
 }
 .modal__title {
   margin: 0 2rem 0 0;
