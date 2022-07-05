@@ -255,7 +255,7 @@ export default {
   position: relative;
   /*background: #9575cd;*/
   height: auto;
-  width: 85vw;
+  width: 95vw;
   max-width: 550px;
   /*margin: 0;*/
   padding: 0 2%;
@@ -305,7 +305,6 @@ export default {
   justify-content: center;
   align-items: center;
   width:100%;
-  margin-left:5%;
 }
 .rightBtn{
   display:flex;
@@ -313,13 +312,12 @@ export default {
   justify-content: center;
   align-items: center;
   width:100%;
-  margin-right:5%;
 }
 .contactFrame{display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding:0.5rem;
+  padding:0.3rem;
 }
 .contactModalFrame{display:flex;
   justify-content: center;
@@ -374,7 +372,7 @@ export default {
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
-  width: 75vw;
+  width: 95vw;
   max-width: 500px;
 }
 ::v-deep .modal-copy-content {
@@ -408,9 +406,5 @@ export default {
 </style>
 
 <style>
-.dark-mode div::v-deep .modal-content {
-border-color: #2d3748;
-/*background-color: #1a202c;*/
-background-color: #123456;
-}
+
 </style>

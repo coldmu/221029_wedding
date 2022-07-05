@@ -33,14 +33,20 @@ export default {
   position: relative;
   /*background: #26a69a;*/
   height: auto;
-  width: 85vw;
+  width: 95vw;
   max-width: 550px;
-  padding: 0 2%;
+  padding: 0;
   margin-top: 20px;
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-content: center;*/
 }
 
 .familyTextFrame {
-font-weight:600;
+  font-weight:600;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 300px;
 }
 .familyText {
   font-size: 1.15rem;
@@ -48,7 +54,6 @@ font-weight:600;
   padding-right: 10px;
   display: flex;
   margin: 0 auto 10px auto;
-  width: 70%;
   justify-content: space-between;
 }
 .familyText > strong {

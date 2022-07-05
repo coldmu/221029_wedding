@@ -1,5 +1,5 @@
 <template>
-<div class="footerText">찬무 ♥ 혜진 all rights reserved</div>
+<div class="footerFrame"><p>찬무 ♥ 혜진 all rights reserved</p></div>
 </template>
 
 <script>
@@ -10,12 +10,20 @@ export default {
 </script>
 
 <style scoped>
-.footerText{
-  /*display:flex;*/
-  /*justify-content: center;*/
-  /*justify-items: center;*/
-  /*align-items: center;*/
-  /*width: 100%;*/
-  /*text-align: center;*/
+.footerFrame{
+  display:flex;
+  justify-content: center;
+  font-family: 'KimNamyun';
+  width: 100vw;
+  max-width: 550px;
+  color:#888;
+  text-align: center;
+  position:fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom:0;
+  padding-bottom: 8px;
+  z-index:9999;
 }
 </style>

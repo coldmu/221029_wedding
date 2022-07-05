@@ -1,19 +1,15 @@
 <template>
-
-  <div class="menuDiv">
+  <div class="main_container">
     <Menu/>
-  </div>
-
-  <StoryGallery/>
-  <div class="mainFrame">
-    <Opening/>
-    <MainGallery/>
-    <Calendar/>
-    <Location/>
-    <Contact/>
-    <Closing/>
-  </div>
-  <div class="footerDiv">
+    <StoryGallery/>
+    <div class="mainFrame">
+      <Opening/>
+      <MainGallery/>
+      <Calendar/>
+      <Location/>
+      <Contact/>
+      <Closing/>
+    </div>
     <Footer/>
   </div>
 </template>
@@ -59,6 +55,7 @@ body{
 }
 .mainFrame{
   margin-top: 15px;
+  margin: 0 auto;
   display:flex;
   justify-content: center;
   align-items: center;
@@ -94,27 +91,11 @@ body{
     display: block;
     margin-bottom:10px;
 }
-.menuDiv{
-  font-family: 'KimNamyun';
-  display: flex;
-  width:100%;
-  /*justify-content: space-around;*/
-  align-items: center;
-  /*color:#888;*/
-  text-align: center;
-  position:sticky;
-  top:0px;
-  margin: 0 auto;
-  background: #FFF;
-  z-index:9999;
-}
 
 .footerDiv{
   font-family: 'KimNamyun';
   display: flex;
-  width:100%;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
   color:#888;
   text-align: center;
   position:fixed;

@@ -43,24 +43,36 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .menuFrame{
   display:flex;
   justify-content: space-between;
   justify-items: center;
   align-items: center;
-  width: 100%;
-  /*text-align: center;*/
-  padding: 10px 0 0 0;
+  text-align: center;
+  /*padding: 10px 0 0 0;*/
+  font-family: 'KimNamyun';
+  width: 100vw;
+  max-width: 550px;
+  /*justify-content: space-around;*/
+  /*align-items: center;*/
+  color:#888;
+  position: fixed;
+  top:0;
+  left:0;
+  right: 0;
+  margin: 0 auto;
+  background: #fff;
+  z-index:1000;
 }
 .menuText{
   /*width:30%;*/
   width: 25%;
   font-family: 'KimNamyun';
-  font-size:1.1rem;
+  font-size: clamp(14px, 4vw, 18px);
   margin:5px 5px 1px 5px;
   padding:5px 10px 1px 10px;
-  background:rgba(200,200,200,0);
+  /*background:rgba(200,200,200,0);*/
   border-radius:5px;
 }
 

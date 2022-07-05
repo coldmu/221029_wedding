@@ -3,10 +3,9 @@
   <v-app>
     <v-main>
       <router-view/>
-<!--      <FlowerShower v-for="n in 18" :key="`leaf-${n}`"/>-->
     </v-main>
   </v-app>
-
+  <!--      <FlowerShower v-for="n in 18" :key="`leaf-${n}`"/>-->
 </template>
 
 <script>
@@ -44,8 +43,37 @@ export default {
   font-style: normal;
 }
 
-body {
-  font-family: 'Cafe24Oneprettynight';
+#app, .v-application{
+  margin: 0;
+  width: 100vw;
+}
+
+.main_container{
+  /*display: grid;*/
+  position: relative;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  justify-self: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  font-family: "Cafe24Oneprettynight";
+  color: #202121;
+  vertical-align: baseline;
+}
+
+div{
+  /*width: 85vw;*/
+  /*max-width: 550px;*/
+  /*margin: 0 auto;*/
 }
 
 </style>

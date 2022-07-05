@@ -109,7 +109,7 @@ export default {
   position: relative;
   /*background: #9575cd;*/
   height: auto;
-  width: 85vw;
+  width: 95vw;
   max-width: 550px;
   padding: 0 2%;
   margin-top: 20px;
