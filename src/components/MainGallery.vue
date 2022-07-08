@@ -14,16 +14,15 @@
       >
         <template #default="scope">
           <figure class="images">
-            <div v-for="{source, thumbnail, alt} in scope.images" :key="source" class="image-wrapper">
+            <div v-for="{source, thumbnail} in scope.images" :key="source" class="image-wrapper">
               <img
                 class="image"
                 :src="thumbnail"
-                :data-source="source"
-                :alt="alt"
+                :data-src="source"
+                alt="mainGallery"
               >
             </div>
           </figure>
-          <p><strong>Options: </strong>{{ scope.options }}</p>
         </template>
       </viewer>
     </div>
@@ -33,43 +32,43 @@
 
 <script>
 const sourceImages = [];
-const base = Math.floor(Math.random() * 60) + 10;
-for (let i = 0; i < 10; i += 1) {
+for (let i = 1; i <= 10; i += 1) {
   sourceImages.push({
-    thumbnail: `https://picsum.photos/id/${base + i}/346/216`,
-    source: `https://picsum.photos/id/${base + i}/1440/900`,
-    alt: `Image: ${base + i}`,
+    /* eslint-disable */
+    thumbnail: require(`@/assets/galleryImages/thumbnails/${i}.jpg`),
+    source: require(`@/assets/galleryImages/${i}.jpg`),
+    /* eslint-disable */
+    alt: 'test',
   });
 }
-
 export default {
   name: 'MainGallery',
   data() {
     return {
-      // images: [
-      //   'https://picsum.photos/200/200',
-      //   'https://picsum.photos/300/200',
-      //   'https://picsum.photos/250/200',
-      // ],
-      images: [...sourceImages].splice(0, 5),
+      images: sourceImages,
       options: {
         inline: false,
         button: true,
         navbar: true,
         title: false,
         toolbar: true,
-        tooltip: true,
+        tooltip: false,
         movable: false,
-        zoomable: false,
+        zoomable: true,
         rotatable: false,
         scalable: false,
-        transition: true,
+        loading: true,
+        focus: true,
+        // transition: true,
         fullscreen: true,
         keyboard: true,
-        zoomOnTouch: false,
-        zoomOnWheel: false,
+        zoomOnTouch: true,
+        zoomOnWheel: true,
         slideOnTouch: true,
+        toggleOnDblclick: true,
+        interval: 2500,
         zIndex: 9999,
+        url: 'data-src',
       },
     };
   },
@@ -105,6 +104,8 @@ export default {
 
 .viewer {
   height: 100%;
+  max-width: 550px;
+  overflow: hidden;
 
   .images {
     height: 100%;
@@ -113,17 +114,18 @@ export default {
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 5px;
+    padding: 1px;
 
     .image-wrapper {
-      display: inline-block;
-      width: calc(33% - 20px);
-      margin: 5px 5px 0 5px;
+      //display: inline-block;
+      width: 22%;
+      overflow: hidden;
+      margin: 1px;
 
       .image {
-        width: 200%;
+        width: 100%;
         cursor: pointer;
-        display: inline-block;
+        //display: inline-block;
       }
 
     }
