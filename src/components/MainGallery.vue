@@ -32,11 +32,11 @@
 
 <script>
 const sourceImages = [];
-for (let i = 1; i <= 10; i += 1) {
+for (let i = 1; i <= 29; i += 1) {
   sourceImages.push({
     /* eslint-disable */
     thumbnail: require(`@/assets/galleryImages/thumbnails/${i}.jpg`),
-    source: require(`@/assets/galleryImages/${i}.jpg`),
+    source: require(`@/assets/galleryImages/1_${i}.jpg`),
     /* eslint-disable */
     alt: 'test',
   });
@@ -53,13 +53,13 @@ export default {
         title: false,
         toolbar: true,
         tooltip: false,
-        movable: false,
-        zoomable: true,
+        movable: true,
+        zoomable: false,
         rotatable: false,
         scalable: false,
         loading: true,
         focus: true,
-        // transition: true,
+        transition: false,
         fullscreen: true,
         keyboard: true,
         zoomOnTouch: true,
