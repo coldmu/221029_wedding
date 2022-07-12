@@ -64,7 +64,7 @@
       <p class="contactModalText">전화번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
       <div class="contactModalCopy">
-        <button class="copyBtn" @click="document.location.href=`tel:${contactInfo[contactPerson].phone}`; showPhoneCopyModal = true">전화하기</button>
+        <button class="copyBtn" @click="location.href='naver.com';">전화하기</button>
       </div>
     </div>
     <div class="horizontalLine"></div>
@@ -84,8 +84,8 @@
       <mdi-close></mdi-close>
     </button>
     <div class="copyModalFrame">
-      <p><strong>{{ contactInfo[contactPerson].accountNum }} 만</strong> 복사되었습니다.</p>
-      <p>은행: {{ contactInfo[contactPerson].accountBank }}, 예금주: {{ contactInfo[contactPerson].accountName }} 는 기억해주세요.</p>
+      <p><strong>{{ contactInfo[contactPerson].accountNum }} </strong></p>
+      <p>복사되었습니다.</p>
     <div class="modal__action">
       <v-button @click="confirm">confirm</v-button>
     </div>

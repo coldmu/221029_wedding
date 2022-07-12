@@ -31,13 +31,13 @@ export default {
       //     .to({}, { duration: 2 });
       // });
       // gsap.set('.horizon_box', { autoAlpha: 0 });
-      gsap.defaults({ ease: 'power1.in', duration: 10, laze: true });
+      gsap.defaults({ ease: 'none', duration: 3, laze: true });
       const t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '#section',
           pin: true,
-          scrub: 0.5,
-          stagger: 1,
+          scrub: 5,
+          stagger: 10,
           start: 'top top',
           end: '+=3000',
           // markers: true,
@@ -50,24 +50,24 @@ export default {
             scale: 0.4, autoAlpha: 0.4,
           },
         )
-        .to({}, { duration: 1 })
-        .to('.box1', { autoAlpha: 0, duration: 0.2 })
+        .to({}, { duration: 4 })
+        .to('.box1', { autoAlpha: 0, duration: 1 })
         .from(
           '.box2',
           {
             scale: 0.2, autoAlpha: 0,
           },
         )
-        .to({}, { duration: 1 })
-        .to('.box2', { autoAlpha: 0, duration: 0.2 })
+        .to({}, { duration: 4 })
+        .to('.box2', { autoAlpha: 0, duration: 1 })
         .from(
           '.box3',
           {
             scale: 0.2, autoAlpha: 0,
           },
         )
-        .to({}, { duration: 1 })
-        .to('.box3', { autoAlpha: 0, duration: 0.2 })
+        .to({}, { duration: 4 })
+        .to('.box3', { autoAlpha: 0, duration: 1 })
         .from(
           '.box4',
           {

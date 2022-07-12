@@ -29,7 +29,7 @@ export default {
     createMap() {
       const container = document.getElementById('map');
       const options = {
-        center: new kakao.maps.LatLng(35.55070507886759, 129.1415097724912),
+        center: new kakao.maps.LatLng(35.55846673850706, 129.13922598658215),
         level: 4,
         mapTypeId: kakao.maps.MapTypeId.ROADMAP,
       };
