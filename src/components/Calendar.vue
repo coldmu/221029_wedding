@@ -1,8 +1,6 @@
 <template>
   <section class="calendar">
-    <div class="box">
       <img :src="require(`@/assets/images/22_October.jpg`)" alt="calendar" class="calendar_img">
-    </div>
   </section>
 </template>
 
@@ -18,12 +16,14 @@ export default {
   position: relative;
   /*background: #2e7d32;*/
   height: auto;
-  width: 85vw;
+  width: 95vw;
   max-width: 550px;
-  padding: 0 2%;
+  /*padding: 0 2%;*/
+  padding: 0 1%;
   margin-top: 20px;
+  overflow: hidden;
 }
-.box { display: flex; justify-content: center; align-items: center; }
-.box { flex-direction: column;}
-.calendar_img { width: 85vw; max-width: 550px;}
+/*.box { display: flex; justify-content: center; align-items: center; }*/
+/*.box { flex-direction: column;}*/
+.calendar_img { width: 95vw; max-width: 550px;}
 </style>

@@ -35,8 +35,8 @@ export default {
   height: auto;
   width: 95vw;
   max-width: 550px;
-  padding: 0;
-  margin-top: 20px;
+  padding: 0 1%;
+  margin-top: 30px;
   /*display: flex;*/
   /*flex-direction: column;*/
   /*align-content: center;*/

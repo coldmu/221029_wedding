@@ -64,14 +64,15 @@
       <p class="contactModalText">전화번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
       <div class="contactModalCopy">
-        <button class="copyBtn" @click="handleCopy('phone'); showPhoneCopyModal = true">전화번호 복사하기</button>
+        <button class="copyBtn" @click="document.location.href=`tel:${contactInfo[contactPerson].phone}`; showPhoneCopyModal = true">전화하기</button>
       </div>
     </div>
+    <div class="horizontalLine"></div>
     <div class="contactModalPhone">
       <p class="contactModalText">계좌번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].account }}</p>
       <div class="contactModalCopy">
-        <button class="copyBtn" @click="handleCopy('account'); showAccountCopyModal = true">계좌번호 복사하기</button>
+        <button class="copyBtn" @click="handleCopy('account'); showAccountCopyModal = true">복사하기</button>
       </div>
     </div>
   </vue-final-modal>
@@ -258,8 +259,8 @@ export default {
   width: 95vw;
   max-width: 550px;
   /*margin: 0;*/
-  padding: 0 2%;
-  margin-top: 20px;
+  padding: 0 1%;
+  margin-top: 30px;
 }
 .contactImg { display:inline-block;
   width:40px;
@@ -274,7 +275,8 @@ export default {
   width:100%;
   justify-content: space-between;
   align-items: center;
-  margin-top:5px;
+  /*margin-top:5px;*/
+  margin: 3px 0;
 }
 .contactModalText{
   font-size:0.9rem;
@@ -345,7 +347,7 @@ export default {
   color: #fff;
   font-family: 'Cafe24Oneprettynight';
   text-align: left;
-  margin-top: 3px;
+  /*margin: 2px 0;*/
 }
 .kakaoBtn{
   padding: 5px 10px;
@@ -402,6 +404,12 @@ export default {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
+}
+
+.horizontalLine{
+  width:100%;
+  height:1px;
+  background:#cecece;
 }
 </style>
 

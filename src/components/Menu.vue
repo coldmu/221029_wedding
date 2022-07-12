@@ -62,6 +62,7 @@ export default {
   left:0;
   right: 0;
   margin: 0 auto;
+  padding-top: 10px;
   background: #fff;
   z-index:1000;
 }

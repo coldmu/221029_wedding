@@ -66,6 +66,7 @@ export default {
         zoomOnWheel: true,
         slideOnTouch: true,
         toggleOnDblclick: false,
+        maxZoomRatio: 1,
         interval: 2500,
         zIndex: 9999,
         url: 'data-src',
@@ -90,10 +91,10 @@ export default {
   position: relative;
   /*background: #e6ee9c;*/
   height: auto;
-  width: 85vw;
+  width: 95vw;
   max-width: 550px;
-  padding: 0 2%;
-  margin-top: 20px;
+  padding: 0 1%;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -114,18 +115,19 @@ export default {
     align-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 1px;
+
 
     .image-wrapper {
-      //display: inline-block;
-      width: 22%;
+      display: flex;
+      width: 25%;
       overflow: hidden;
-      margin: 1px;
+      padding: 1px;
 
       .image {
         width: 100%;
         cursor: pointer;
-        //display: inline-block;
+        margin: 0;
+        padding: 0;
       }
 
     }
