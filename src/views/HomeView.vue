@@ -4,10 +4,10 @@
 <!--    <StoryGallery/>-->
     <div class="mainFrame">
       <Opening/>
-<!--      <MainGallery/>-->
+      <MainGallery/>
       <Calendar/>
       <Location/>
-<!--      <Contact/>-->
+      <Contact/>
       <Closing/>
     </div>
     <Footer/>
@@ -37,10 +37,10 @@ export default defineComponent({
     // eslint-disable-next-line
     // StoryGallery,
     Opening,
-    // MainGallery,
+    MainGallery,
     Calendar,
     Location,
-    // Contact,
+    Contact,
     Closing,
     Menu,
     Footer,
