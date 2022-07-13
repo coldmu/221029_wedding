@@ -26,7 +26,7 @@
         </template>
       </viewer>
     </div>
-    <button type="button" @click="show">위 사진을 선택하시면 확대됩니다 ^^</button>
+<!--    <button type="button" @click="show">위 사진을 선택하시면 확대됩니다 ^^</button>-->
   </section>
 </template>
 
@@ -51,7 +51,24 @@ export default {
         button: true,
         navbar: true,
         title: false,
-        toolbar: true,
+        toolbar: {
+          reset: {
+            show: true,
+            size: 'large',
+          },
+          prev: {
+            show: true,
+            size: 'large',
+          },
+          play: {
+            show: true,
+            size: 'large',
+          },
+          next: {
+            show: true,
+            size: 'large',
+          },
+        },
         tooltip: false,
         movable: true,
         zoomable: true,
@@ -70,6 +87,7 @@ export default {
         interval: 2500,
         zIndex: 9999,
         url: 'data-src',
+        className: 'img-preview',
       },
     };
   },

@@ -75,6 +75,7 @@ export default {
   padding:5px 10px 1px 10px;
   /*background:rgba(200,200,200,0);*/
   border-radius:5px;
+  /*font-weight: bold;*/
 }
 
 .menuText:active{

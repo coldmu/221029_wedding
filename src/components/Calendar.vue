@@ -20,7 +20,7 @@ export default {
   max-width: 550px;
   /*padding: 0 2%;*/
   padding: 0 1%;
-  margin-top: 20px;
+  margin-top: 60px;
   overflow: hidden;
 }
 /*.box { display: flex; justify-content: center; align-items: center; }*/

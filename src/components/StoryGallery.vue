@@ -173,7 +173,7 @@ section { position: relative; height: 100vh;}
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; background: yellow;}
 .storyEnd { height: 82vh;}
 .storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; }
-.storyTextDiv { height: 10%; padding-top: 0.5vh;}
+.storyTextDiv { height: 10%; margin-top: 1.5vh;}
 </style>
 
 <!--<style>-->

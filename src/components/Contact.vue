@@ -64,7 +64,7 @@
       <p class="contactModalText">전화번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
       <div class="contactModalCopy">
-        <button class="copyBtn" @click="location.href='naver.com';">전화하기</button>
+        <a class="copyBtn" :href="`tel:${contactInfo[contactPerson].phone}`">전화하기</a>
       </div>
     </div>
     <div class="horizontalLine"></div>
@@ -189,7 +189,7 @@ export default {
           // eslint-disable-next-line
           url: require(`@/assets/images/chanmu.png`),
           name: '신랑 양찬무',
-          phone: '01000000000',
+          phone: '01000000001',
           account: '은행 123123123 (양찬무)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -199,7 +199,7 @@ export default {
           // eslint-disable-next-line
           url: require(`@/assets/images/c_dad.png`),
           name: '아버지 양준희',
-          phone: '01000000000',
+          phone: '01000000002',
           account: '은행 123123123 (양준희)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -209,7 +209,7 @@ export default {
           // eslint-disable-next-line
           url: require(`@/assets/images/c_mom.png`),
           name: '어머니 오옥순',
-          phone: '01000000000',
+          phone: '01000000003',
           account: '은행 123123123 (양준희)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -263,8 +263,8 @@ export default {
   margin-top: 30px;
 }
 .contactImg { display:inline-block;
-  width:40px;
-  height:40px;
+  width:45px;
+  height:45px;
   border-radius:9999px;
   background-position:center;
   background-size:cover;
@@ -276,11 +276,12 @@ export default {
   justify-content: space-between;
   align-items: center;
   /*margin-top:5px;*/
-  margin: 3px 0;
+  margin: 6px 0;
 }
 .contactModalText{
   font-size:0.9rem;
   margin:0;
+  /*font-weight: bold;*/
 }
 .contactModalCopy{
   display:flex;
@@ -336,7 +337,8 @@ export default {
   /*margin-bottom: 8px;*/
 }
 .contactText {margin-top:10px;
-  font-size:0.7rem;}
+  font-size:0.85rem;
+font-weight: bold;}
 
 .copyBtn {padding: 5px 10px;
   font-size: 0.7rem;
@@ -349,6 +351,8 @@ export default {
   text-align: left;
   /*margin: 2px 0;*/
 }
+a {text-decoration: none;}
+
 .kakaoBtn{
   padding: 5px 10px;
   font-size: 0.7rem;

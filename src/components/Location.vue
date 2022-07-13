@@ -5,7 +5,7 @@
       <p class="contentTitle">오시는 길</p>
     </div>
 
-    <div id="map" style="width:100%;height:350px;"></div>
+    <div id="map" style="width:100%;height:450px;"></div>
   </section>
 </template>
 
@@ -29,7 +29,7 @@ export default {
     createMap() {
       const container = document.getElementById('map');
       const options = {
-        center: new kakao.maps.LatLng(35.55846673850706, 129.13922598658215),
+        center: new kakao.maps.LatLng(35.55057673850706, 129.13922598658215),
         level: 4,
         mapTypeId: kakao.maps.MapTypeId.ROADMAP,
       };
