@@ -1,8 +1,8 @@
 <template>
   <div class="main_container">
     <Menu/>
-<!--    <StoryGallery/>-->
     <div class="mainFrame">
+    <StoryGallery/>
       <Opening/>
       <MainGallery/>
       <Calendar/>
@@ -35,7 +35,7 @@ export default defineComponent({
   name: 'HomeView',
   components: {
     // eslint-disable-next-line
-    // StoryGallery,
+    StoryGallery,
     Opening,
     MainGallery,
     Calendar,
