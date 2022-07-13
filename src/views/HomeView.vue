@@ -1,13 +1,13 @@
 <template>
   <div class="main_container">
     <Menu/>
-    <StoryGallery/>
+<!--    <StoryGallery/>-->
     <div class="mainFrame">
       <Opening/>
-      <MainGallery/>
+<!--      <MainGallery/>-->
       <Calendar/>
       <Location/>
-      <Contact/>
+<!--      <Contact/>-->
       <Closing/>
     </div>
     <Footer/>
@@ -21,9 +21,11 @@ import { defineComponent } from 'vue';
 // eslint-disable-next-line
 import StoryGallery from '../components/StoryGallery.vue';
 import Opening from '../components/Opening.vue';
+// eslint-disable-next-line
 import MainGallery from '../components/MainGallery.vue';
 import Calendar from '../components/Calendar.vue';
 import Location from '../components/Location.vue';
+// eslint-disable-next-line
 import Contact from '../components/Contact.vue';
 import Closing from '../components/Closing.vue';
 import Menu from '../components/Menu.vue';
@@ -33,12 +35,12 @@ export default defineComponent({
   name: 'HomeView',
   components: {
     // eslint-disable-next-line
-    StoryGallery,
+    // StoryGallery,
     Opening,
-    MainGallery,
+    // MainGallery,
     Calendar,
     Location,
-    Contact,
+    // Contact,
     Closing,
     Menu,
     Footer,
