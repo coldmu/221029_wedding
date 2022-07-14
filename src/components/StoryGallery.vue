@@ -1,13 +1,13 @@
 <script>
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { onMounted } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 gsap.registerPlugin(ScrollTrigger);
 export default {
   setup() {
-    // const section2 = ref(null);
-    // const triggers = ScrollTrigger.getAll();
+    const section = ref(null);
+    const triggers = ScrollTrigger.getAll();
 
     function gsapSet() {
       // gsap.set('.horizon_box', { scale: 0 });
@@ -31,12 +31,12 @@ export default {
       //     .to({}, { duration: 2 });
       // });
       // gsap.set('.horizon_box', { autoAlpha: 0 });
-      gsap.defaults({ ease: 'none', duration: 3, laze: true });
+      gsap.defaults({ ease: 'none', duration: 3, laze: false });
       const t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '#section',
           pin: true,
-          scrub: 5,
+          scrub: 4,
           stagger: 10,
           start: 'top top',
           end: '+=3000',
@@ -119,15 +119,15 @@ export default {
       ScrollTrigger.refresh();
       gsapSet();
     });
-    // onUnmounted(() => {
-    //   triggers.forEach((trigger) => {
-    //     trigger.kill();
-    //   });
-    //   ScrollTrigger.clearMatchMedia();
-    // });
+    onUnmounted(() => {
+      triggers.forEach((trigger) => {
+        trigger.kill();
+      });
+      ScrollTrigger.clearMatchMedia();
+    });
 
     return {
-      // section,
+      section,
     };
   },
 };
@@ -135,9 +135,7 @@ export default {
 
 <template>
   <section id="section">
-    <div class="box_wrapper">
       <div class="box box1 horizon_box">
-<!--        <img :src="require(`@/assets/storyImages/1.webp`)" alt="1" class="storyIamgeVertical test1" loading="eager">-->
         <img :src="require(`@/assets/storyImages/1_1.jpg`)" alt="1" class="storyIamgeVertical test1" loading="eager">
         <div class="storyTextDiv"><p class="storyText"> 통무통무<br>통무는 잘생겼다능!! </p></div>
       </div>
@@ -153,17 +151,14 @@ export default {
         <img :src="require(`@/assets/storyImages/1_4.jpg`)" alt="4" class="storyEnd" loading="eager">
         <div class="storyTextDiv"><p class="storyText"> 통무♥찌니<br>우리는 최고라능!! </p></div>
       </div>
-    </div>
   </section>
 </template>
 
 <style>
-{ margin: 0; }
-body { margin: 0; }
-section { position: relative; height: 100vh;}
+section { position: relative; height: 100vh; width: 95vw; max-width: 550px; margin: 0 auto;}
 .horizon_box { position: absolute; top: 0; left:0;}
 .box { display: flex; justify-content: center; align-items: center; width: 100%; }
-.box { flex-direction: column;}
+.box { flex-direction: column; height: 100%;}
 .box_wrapper { background: red; }
 .box1 { height: 100%; }
 .box2 { height: 100%; }

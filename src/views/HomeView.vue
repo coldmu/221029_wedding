@@ -1,8 +1,8 @@
 <template>
   <div class="main_container">
     <Menu/>
-    <div class="mainFrame">
     <StoryGallery/>
+    <div class="mainFrame">
       <Opening/>
       <MainGallery/>
       <Calendar/>
