@@ -36,10 +36,9 @@ export default {
         scrollTrigger: {
           trigger: '#section',
           pin: true,
-          scrub: 4,
-          stagger: 10,
+          scrub: 2,
           start: 'top top',
-          end: '+=3000',
+          end: '+=12000',
           // markers: true,
         },
       });

@@ -5,7 +5,7 @@
       <p class="contentTitle">오시는 길</p>
     </div>
 
-    <div id="map" style="width:100%;height:450px;"></div>
+    <div id="map" style="width:100%;height:400px;"></div>
   </section>
 </template>
 
