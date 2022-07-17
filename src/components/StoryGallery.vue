@@ -143,7 +143,7 @@ export default {
         <div class="storyTextDiv"><p class="storyText"> 통무통무!!<br>통무는 멋있다능!! </p></div>
       </div>
       <div class="box box3 horizon_box">
-        <img :src="require(`@/assets/storyImages/1_3.jpg`)" alt="3" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/1_3.jpg`)" alt="3" class="storyIamgeHorizon" loading="eager">
         <div class="storyTextDiv"><p class="storyText"> 통무♥찌니<br>귀여운 커플이라능!! </p></div>
       </div>
       <div class="box box4 horizon_box">
@@ -154,7 +154,7 @@ export default {
 </template>
 
 <style>
-section { position: relative; height: 100vh; width: 95vw; max-width: 550px; margin: 0 auto;}
+section { position: relative; height: 100vh; width: 95vw; max-width: 550px; margin: 0 auto; overflow: hidden;}
 .horizon_box { position: absolute; top: 0; left:0;}
 .box { display: flex; justify-content: center; align-items: center; width: 100%; }
 .box { flex-direction: column; height: 100%;}
@@ -165,7 +165,7 @@ section { position: relative; height: 100vh; width: 95vw; max-width: 550px; marg
 .box4 { height: 100%; }
 .storyIamgeVertical { height: 75vh; max-width: 100%; background: yellow;}
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; background: yellow;}
-.storyEnd { height: 82vh;}
+.storyEnd { width: 95vw; max-width: 550px;}
 .storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; }
 .storyTextDiv { height: 10%; margin-top: 1.5vh;}
 </style>
