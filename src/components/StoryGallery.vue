@@ -49,7 +49,7 @@ export default {
             scale: 0.4, autoAlpha: 0.4,
           },
         )
-        .to({}, { duration: 4 })
+        .to({}, { duration: 2 })
         .to('.box1', { autoAlpha: 0, duration: 1 })
         .from(
           '.box2',
@@ -57,7 +57,7 @@ export default {
             scale: 0.2, autoAlpha: 0,
           },
         )
-        .to({}, { duration: 4 })
+        .to({}, { duration: 2 })
         .to('.box2', { autoAlpha: 0, duration: 1 })
         .from(
           '.box3',
@@ -65,7 +65,7 @@ export default {
             scale: 0.2, autoAlpha: 0,
           },
         )
-        .to({}, { duration: 4 })
+        .to({}, { duration: 2 })
         .to('.box3', { autoAlpha: 0, duration: 1 })
         .from(
           '.box4',
@@ -135,15 +135,15 @@ export default {
 <template>
   <section id="section">
       <div class="box box1 horizon_box">
-        <img :src="require(`@/assets/storyImages/1_1.jpg`)" alt="1" class="storyIamgeVertical test1" loading="eager">
+        <img :src="require(`@/assets/storyImages/1_1.jpg`)" alt="1" class="storyIamgeVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText"> 통무통무<br>통무는 잘생겼다능!! </p></div>
       </div>
       <div class="box box2 horizon_box">
-        <img :src="require(`@/assets/storyImages/1_2.jpg`)" alt="2" class="storyIamgeVertical test2" loading="eager">
+        <img :src="require(`@/assets/storyImages/1_2.jpg`)" alt="2" class="storyIamgeVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText"> 통무통무!!<br>통무는 멋있다능!! </p></div>
       </div>
       <div class="box box3 horizon_box">
-        <img :src="require(`@/assets/storyImages/1_3.jpg`)" alt="3" class="storyIamgeHorizon" loading="eager">
+        <img :src="require(`@/assets/storyImages/1_3.jpg`)" alt="3" class="storyIamgeVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText"> 통무♥찌니<br>귀여운 커플이라능!! </p></div>
       </div>
       <div class="box box4 horizon_box">
