@@ -133,16 +133,6 @@ export default {
         duration: 1,
       });
     }
-    //
-    //   gsap.fromTo('#opening', { autoAlpha: 0 }, {
-    //     duration: 1.25,
-    //     y: -20,
-    //     autoAlpha: 1,
-    //     ease: 'expo',
-    //     overwrite: 'auto',
-    //     pin: true,
-    //   });
-    // }
 
     onMounted(() => {
       ScrollTrigger.refresh();

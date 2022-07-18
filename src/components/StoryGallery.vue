@@ -154,7 +154,7 @@ export default {
 </template>
 
 <style>
-section { position: relative; height: 100vh; width: 95vw; max-width: 550px; margin: 0 auto; overflow: hidden;}
+section { position: relative; height: 100vh; width: 100vw; max-width: 550px; margin: 0 auto; overflow: hidden;}
 .horizon_box { position: absolute; top: 0; left:0;}
 .box { display: flex; justify-content: center; align-items: center; width: 100%; }
 .box { flex-direction: column; height: 100%;}
@@ -165,7 +165,7 @@ section { position: relative; height: 100vh; width: 95vw; max-width: 550px; marg
 .box4 { height: 100%; }
 .storyIamgeVertical { height: 75vh; max-width: 100%; background: yellow;}
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; background: yellow;}
-.storyEnd { width: 95vw; max-width: 550px;}
+.storyEnd { width: 100vw; max-width: 550px;}
 .storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; }
 .storyTextDiv { height: 10%; margin-top: 1.5vh;}
 </style>

@@ -1,5 +1,5 @@
 <template>
-<div class="footerFrame"><p>찬무 ♥ 혜진 all rights reserved</p></div>
+<div class="footerFrame"><p class="footerText">찬무 ♥ 혜진 all rights reserved</p></div>
 </template>
 
 <script>
@@ -25,5 +25,10 @@ export default {
   bottom:0;
   padding-bottom: 8px;
   z-index:9999;
+}
+
+.footerText{
+  font-family: 'KimNamyun';
+  font-size: clamp(14px, 4vw, 18px);
 }
 </style>
