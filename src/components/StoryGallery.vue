@@ -32,45 +32,61 @@ export default {
       // });
       // gsap.set('.horizon_box', { autoAlpha: 0 });
       gsap.defaults({ ease: 'none', duration: 3, laze: false });
+      gsap.set('.horizon_box', { autoAlpha: 0 });
       const t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '#section',
           pin: true,
-          scrub: 2,
+          scrub: true,
           start: 'top top',
-          end: '+=12000',
+          end: '+=9000',
           // markers: true,
         },
       });
       t1.to('.menuFrame', { autoAlpha: 0, duration: 0.5 })
-        .from(
+        .fromTo(
           '.box1',
           {
-            scale: 0.4, autoAlpha: 0.4,
+            scale: 0.5, autoAlpha: 1,
+          },
+          {
+            scale: 1, autoAlpha: 1,
           },
         )
-        .to({}, { duration: 2 })
+        .to({}, { duration: 1 })
         .to('.box1', { autoAlpha: 0, duration: 1 })
-        .from(
+        .to('.box2', { autoAlpha: 1, duration: 0 })
+        .fromTo(
           '.box2',
           {
-            scale: 0.2, autoAlpha: 0,
+            scale: 0.3,
+          },
+          {
+            scale: 1,
           },
         )
-        .to({}, { duration: 2 })
+        .to({}, { duration: 1 })
         .to('.box2', { autoAlpha: 0, duration: 1 })
-        .from(
+        .to('.box3', { autoAlpha: 1, duration: 0 })
+        .fromTo(
           '.box3',
           {
-            scale: 0.2, autoAlpha: 0,
+            scale: 0.3,
+          },
+          {
+            scale: 1,
           },
         )
-        .to({}, { duration: 2 })
+        .to({}, { duration: 1 })
         .to('.box3', { autoAlpha: 0, duration: 1 })
-        .from(
+        .to('.box4', { autoAlpha: 1, duration: 0 })
+        .fromTo(
           '.box4',
           {
-            scale: 0.2, autoAlpha: 0,
+            scale: 0.3,
+          },
+          {
+            scale: 1,
           },
         )
         .to('.menuFrame', { autoAlpha: 1, duration: 3 });
@@ -159,10 +175,10 @@ section { position: relative; height: 100vh; width: 100vw; max-width: 550px; mar
 .box { display: flex; justify-content: center; align-items: center; width: 100%; }
 .box { flex-direction: column; height: 100%;}
 .box_wrapper { background: red; }
-.box1 { height: 100%; }
-.box2 { height: 100%; }
-.box3 { height: 100%; }
-.box4 { height: 100%; }
+.box1 { height: 100%; z-index: 9999}
+.box2 { height: 100%; z-index: 9998}
+.box3 { height: 100%; z-index: 9997}
+.box4 { height: 100%; z-index: 9996}
 .storyIamgeVertical { height: 75vh; max-width: 100%; background: yellow;}
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; background: yellow;}
 .storyEnd { width: 100vw; max-width: 550px;}
