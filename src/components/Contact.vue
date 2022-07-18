@@ -60,6 +60,7 @@
       <input ref="inputAccountName" type="hidden" :value="contactInfo[contactPerson].accountName"/>
 
     </div>
+    <div class="none"></div>
     <div class="contactModalPhone">
       <p class="contactModalText">전화번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
@@ -276,7 +277,7 @@ export default {
   justify-content: space-between;
   align-items: center;
   /*margin-top:5px;*/
-  margin: 10px 0;
+  margin: 5px 0;
 }
 .contactModalText{
   font-size:0.9rem;
@@ -326,8 +327,8 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding:0.5rem;
-  margin-bottom: 8px;
+  /*padding:0.5rem;*/
+  /*margin-bottom: 8px;*/
 }
 .copyModalFrame{display:flex;
   justify-content: center;
@@ -338,9 +339,13 @@ export default {
 }
 .contactText {margin-top:10px;
   font-size:0.85rem;
-font-weight: bold;}
+font-weight: bold;
+  /*margin-bottom: 30px;*/
+}
 
-.callBtn {padding: 5px 10px;
+.callBtn {
+  height: 1.7rem;
+  padding: 5px 10px;
   font-size: 0.7rem;
   border: 0;
   border-radius: 5px;
@@ -348,18 +353,20 @@ font-weight: bold;}
   display: inline-block;
   color: #fff;
   font-family: 'Cafe24Oneprettynight';
-  text-align: left;
+  text-align: center;
   /*margin: 2px 0;*/
 }
-.copyBtn {padding: 5px 10px;
+.copyBtn {
+  height: 1.7rem;
+  padding: 5px 10px;
   font-size: 0.7rem;
   border: 0;
   border-radius: 5px;
-  background: #1BB0C2;
+  background: #C2B93B;
   display: inline-block;
   color: #fff;
   font-family: 'Cafe24Oneprettynight';
-  text-align: left;
+  text-align: center;
   /*margin: 2px 0;*/
 }
 a {text-decoration: none;}
@@ -385,7 +392,7 @@ a {text-decoration: none;}
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1.5rem 1rem 0.5rem 1rem;
   border: 1px solid #e2e8f0;
   border-radius: 0.25rem;
   background: #fff;
@@ -425,6 +432,9 @@ a {text-decoration: none;}
   width:100%;
   height:1px;
   background:#cecece;
+}
+.none{
+  margin-top:30px;
 }
 </style>
 

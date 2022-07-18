@@ -58,12 +58,12 @@ export default {
       gsap.from('#opening', {
         scrollTrigger: {
           trigger: '#opening',
-          markers: true,
+          // markers: true,
           ease: 'expo',
-          start: 'center bottom',
+          start: 'top 75%',
           // toggleActions: 'restart none reverse none',
         },
-        autoAlpha: 0.1,
+        autoAlpha: 0,
         y: 20,
         duration: 1,
       });
@@ -71,12 +71,12 @@ export default {
       gsap.from('#mainGallery', {
         scrollTrigger: {
           trigger: '#mainGallery',
-          markers: true,
+          // markers: true,
           ease: 'expo',
-          start: 'center bottom',
+          start: 'top 75%',
           // toggleActions: 'restart none reverse none',
         },
-        autoAlpha: 0.1,
+        autoAlpha: 0,
         y: 20,
         duration: 1,
       });
@@ -84,12 +84,12 @@ export default {
       gsap.from('#location', {
         scrollTrigger: {
           trigger: '#location',
-          markers: true,
+          // markers: true,
           ease: 'expo',
-          start: 'center bottom',
+          start: 'top 75%',
           // toggleActions: 'restart none reverse none',
         },
-        autoAlpha: 0.1,
+        autoAlpha: 0,
         y: 20,
         duration: 1,
       });
@@ -97,12 +97,12 @@ export default {
       gsap.from('#contact', {
         scrollTrigger: {
           trigger: '#contact',
-          markers: true,
+          // markers: true,
           ease: 'expo',
-          start: 'center bottom',
+          start: 'top 75%',
           // toggleActions: 'restart none reverse none',
         },
-        autoAlpha: 0.1,
+        autoAlpha: 0,
         y: 20,
         duration: 1,
       });
@@ -110,12 +110,12 @@ export default {
       gsap.from('#calendar', {
         scrollTrigger: {
           trigger: '#calendar',
-          markers: true,
+          // markers: true,
           ease: 'expo',
-          start: 'center bottom',
+          start: 'top 75%',
           // toggleActions: 'restart none reverse none',
         },
-        autoAlpha: 0.1,
+        autoAlpha: 0,
         y: 20,
         duration: 1,
       });
@@ -123,12 +123,12 @@ export default {
       gsap.from('#closing', {
         scrollTrigger: {
           trigger: '#closing',
-          markers: true,
+          // markers: true,
           ease: 'expo',
-          start: 'center bottom',
+          start: 'top 75%',
           // toggleActions: 'restart none reverse none',
         },
-        autoAlpha: 0.1,
+        autoAlpha: 0,
         y: 20,
         duration: 1,
       });
