@@ -252,7 +252,7 @@ export default {
 </script>
 
 <style scoped>
-.contact {
+#contact {
   position: relative;
   /*background: #9575cd;*/
   height: auto;

@@ -1,5 +1,5 @@
 <template>
-  <section class="opening">
+  <section id="opening">
     <div class="titleFrame">
       <p class="contentSubTitle">Wedding Invitation</p>
       <p class="contentTitle">초대합니다</p>
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.opening {
+#opening {
   position: relative;
   /*background: #26a69a;*/
   height: auto;

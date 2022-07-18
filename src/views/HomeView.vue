@@ -15,7 +15,10 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+// import { defineComponent } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { onMounted, onUnmounted } from 'vue';
 
 // Components
 // eslint-disable-next-line
@@ -31,7 +34,9 @@ import Closing from '../components/Closing.vue';
 import Menu from '../components/Menu.vue';
 import Footer from '../components/Footer.vue';
 
-export default defineComponent({
+gsap.registerPlugin(ScrollTrigger);
+
+export default {
   name: 'HomeView',
   components: {
     // eslint-disable-next-line
@@ -45,7 +50,115 @@ export default defineComponent({
     Menu,
     Footer,
   },
-});
+  setup() {
+    const triggers = ScrollTrigger.getAll();
+
+    function gsapSet() {
+      // gsap.defaults({ ease: 'none', duration: 3, laze: false });
+      gsap.from('#opening', {
+        scrollTrigger: {
+          trigger: '#opening',
+          markers: true,
+          ease: 'expo',
+          start: 'center bottom',
+          // toggleActions: 'restart none reverse none',
+        },
+        autoAlpha: 0.1,
+        y: 20,
+        duration: 1,
+      });
+
+      gsap.from('#mainGallery', {
+        scrollTrigger: {
+          trigger: '#mainGallery',
+          markers: true,
+          ease: 'expo',
+          start: 'center bottom',
+          // toggleActions: 'restart none reverse none',
+        },
+        autoAlpha: 0.1,
+        y: 20,
+        duration: 1,
+      });
+
+      gsap.from('#location', {
+        scrollTrigger: {
+          trigger: '#location',
+          markers: true,
+          ease: 'expo',
+          start: 'center bottom',
+          // toggleActions: 'restart none reverse none',
+        },
+        autoAlpha: 0.1,
+        y: 20,
+        duration: 1,
+      });
+
+      gsap.from('#contact', {
+        scrollTrigger: {
+          trigger: '#contact',
+          markers: true,
+          ease: 'expo',
+          start: 'center bottom',
+          // toggleActions: 'restart none reverse none',
+        },
+        autoAlpha: 0.1,
+        y: 20,
+        duration: 1,
+      });
+
+      gsap.from('#calendar', {
+        scrollTrigger: {
+          trigger: '#calendar',
+          markers: true,
+          ease: 'expo',
+          start: 'center bottom',
+          // toggleActions: 'restart none reverse none',
+        },
+        autoAlpha: 0.1,
+        y: 20,
+        duration: 1,
+      });
+
+      gsap.from('#closing', {
+        scrollTrigger: {
+          trigger: '#closing',
+          markers: true,
+          ease: 'expo',
+          start: 'center bottom',
+          // toggleActions: 'restart none reverse none',
+        },
+        autoAlpha: 0.1,
+        y: 20,
+        duration: 1,
+      });
+    }
+    //
+    //   gsap.fromTo('#opening', { autoAlpha: 0 }, {
+    //     duration: 1.25,
+    //     y: -20,
+    //     autoAlpha: 1,
+    //     ease: 'expo',
+    //     overwrite: 'auto',
+    //     pin: true,
+    //   });
+    // }
+
+    onMounted(() => {
+      ScrollTrigger.refresh();
+      gsapSet();
+    });
+    onUnmounted(() => {
+      triggers.forEach((trigger) => {
+        trigger.kill();
+      });
+      ScrollTrigger.clearMatchMedia();
+    });
+
+    return {};
+  },
+};
+
 </script>
 
 <style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="calendar">
+  <section id="calendar">
       <img :src="require(`@/assets/images/22_October.jpg`)" alt="calendar" class="calendar_img">
   </section>
 </template>
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style scoped>
-.calendar {
+#calendar {
   position: relative;
   /*background: #2e7d32;*/
   height: auto;

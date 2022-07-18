@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-.location {
+#location {
   position: relative;
   /*background: #9575cd;*/
   height: auto;

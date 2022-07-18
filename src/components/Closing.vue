@@ -1,5 +1,5 @@
 <template>
-  <section class="closing">
+  <section id="closing">
     <div class="titleFrame">
       <p class="contentSubTitle">Thank You</p>
       <p class="contentTitle">감사합니다</p>
@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style scoped>
-.closing {
+#closing {
   position: relative;
   /*background: #e57373;*/
   height: auto;

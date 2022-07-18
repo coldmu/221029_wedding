@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss" scoped>
-.mainGallery {
+#mainGallery {
   position: relative;
   /*background: #e6ee9c;*/
   height: auto;
