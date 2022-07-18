@@ -63,15 +63,15 @@
     <div class="contactModalPhone">
       <p class="contactModalText">전화번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
-      <div class="contactModalCopy">
-        <a class="copyBtn" :href="`tel:${contactInfo[contactPerson].phone}`">전화하기</a>
+      <div class="contactModalButton">
+        <a class="callBtn" :href="`tel:${contactInfo[contactPerson].phone}`">전화하기</a>
       </div>
     </div>
     <div class="horizontalLine"></div>
     <div class="contactModalPhone">
       <p class="contactModalText">계좌번호</p>
       <p class="contactModalText">{{ contactInfo[contactPerson].account }}</p>
-      <div class="contactModalCopy">
+      <div class="contactModalButton">
         <button class="copyBtn" @click="handleCopy('account'); showAccountCopyModal = true">복사하기</button>
       </div>
     </div>
@@ -276,14 +276,14 @@ export default {
   justify-content: space-between;
   align-items: center;
   /*margin-top:5px;*/
-  margin: 6px 0;
+  margin: 10px 0;
 }
 .contactModalText{
   font-size:0.9rem;
   margin:0;
   /*font-weight: bold;*/
 }
-.contactModalCopy{
+.contactModalButton{
   display:flex;
   justify-content: center;
   align-items: center;
@@ -340,11 +340,22 @@ export default {
   font-size:0.85rem;
 font-weight: bold;}
 
+.callBtn {padding: 5px 10px;
+  font-size: 0.7rem;
+  border: 0;
+  border-radius: 5px;
+  background: #22b572;
+  display: inline-block;
+  color: #fff;
+  font-family: 'Cafe24Oneprettynight';
+  text-align: left;
+  /*margin: 2px 0;*/
+}
 .copyBtn {padding: 5px 10px;
   font-size: 0.7rem;
   border: 0;
   border-radius: 5px;
-  background: #cecece;
+  background: #1BB0C2;
   display: inline-block;
   color: #fff;
   font-family: 'Cafe24Oneprettynight';

@@ -5,7 +5,15 @@
       <p class="contentTitle">오시는 길</p>
     </div>
 
-    <div id="map" style="width:100%;height:400px;"></div>
+    <div id="map" @click="openMap" @keydown="openMap"></div>
+    <p class="small">지도를 클릭하시면 카카오 맵으로 연결됩니다</p>
+
+    <div class="title">
+      <p>22년 10월 29일 토요일 오후 12시 30분</p>
+      <p class="point">더엠컨벤션(구 MBC 웨딩홀)</p>
+      <p>9층 피에스타홀</p>
+      <p>052) xxx-xxxx</p>
+    </div>
   </section>
 </template>
 
@@ -28,89 +36,31 @@ export default {
   methods: {
     createMap() {
       const container = document.getElementById('map');
-      const options = {
-        center: new kakao.maps.LatLng(35.55057673850706, 129.13922598658215),
-        level: 4,
-        mapTypeId: kakao.maps.MapTypeId.ROADMAP,
-      };
-      const map = new kakao.maps.Map(container, options);
 
-      // 지도에 확대 축소 컨트롤을 생성한다
-      const zoomControl = new kakao.maps.ZoomControl();
-
-      // 지도의 우측에 확대 축소 컨트롤을 추가한다
-      map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
-      // eslint-disable-next-line
-      const imgSrc = require(`@/assets/icon/wedding.png`);
-      const imgSize = new kakao.maps.Size(45, 45);
-      const markerImage = new kakao.maps.MarkerImage(imgSrc, imgSize);
-
-      // eslint-disable-next-line
-      const markers = new kakao.maps.Marker(
+      const markers = [
         {
           position: new kakao.maps.LatLng(35.54846673850706, 129.13922598658215),
-          text: '더엠컨벤션11',
-          image: markerImage,
-          // eslint-disable-next-line
-          map: map,
+          text: '더엠컨벤션 - 9F 피에스타홀',
         },
-      );
+      ];
 
+      const options = {
+        center: new kakao.maps.LatLng(35.55057673850706, 129.13922598658215),
+        level: 5,
+        mapTypeId: kakao.maps.MapTypeId.ROADMAP,
+        marker: markers,
+      };
       // eslint-disable-next-line
-      // var content = '<div class="customoverlay">'
-      //   + '  <a href="https://map.kakao.com/link/map/579868035" target="_blank">'
-      //   + '    <span class="title"더엠컨벤션</span>'
-      //   + '  </a>'
-      //   + '</div>';
-
-      // const content = '<div class="overlaybox">'
-      //   + '    <a href="https://map.kakao.com/link/map/579868035" target="_blank"><div class="boxtitle">더엠컨벤션</div></a>'
-      //   + '    <div class="first">'
-      //   + '        <div class="movietitle text">혜진♥찬무 웨딩</div>'
-      //   + '    </div>'
-      //   + '    <ul>'
-      //   + '        <li class="up">'
-      //   + '            <span class="number">일자:</span>'
-      //   + '            <span class="title">2022. 10. 29</span>'
-      //   + '        </li>'
-      //   + '        <li>'
-      //   + '            <span class="number">시간:</span>'
-      //   + '            <span class="title">12:30</span>'
-      //   + '        </li>'
-      //   + '        <li>'
-      //   + '            <span class="number">홀:</span>'
-      //   + '            <span class="title">검정색</span>'
-      //   + '        </li>'
-      //   + '    </ul>'
-      //   + '</div>';
-
-      const content = '<div class="customoverlay">'
-        + '  <a href="https://map.kakao.com/link/map/579868035" target="_blank">'
-        + '    <span class="title">찌니♥통무 더엠컨벤션</span>'
-        + '  </a>'
-        + '</div>';
-
-      // 커스텀 오버레이가 표시될 위치입니다
-      const position = new kakao.maps.LatLng(35.54846673850706, 129.13922598658215);
-
-      // 커스텀 오버레이를 생성합니다
-      // eslint-disable-next-line
-      var customOverlay = new kakao.maps.CustomOverlay({
-        // eslint-disable-next-line
-        map: map,
-        // eslint-disable-next-line
-        position: position,
-        // eslint-disable-next-line
-        content: content,
-        yAnchor: 0.3,
-      });
+      const staticMap = new kakao.maps.StaticMap(container, options);
+    },
+    openMap() {
+      window.open('https://m.map.kakao.com/actions/searchView?q=%EB%8D%94%EC%97%A0%EC%BB%A8%EB%B2%A4%EC%85%98&wxEnc=MNMTPP&wyEnc=QNOQLNN&lvl=4#!/579868035/map/place');
     },
   },
 };
 </script>
 
-<style>
+<style lang="scss" rel="stylesheet/scss" scoped>
 .location {
   position: relative;
   /*background: #9575cd;*/
@@ -122,30 +72,37 @@ export default {
   overflow: hidden;
 }
 
-.customoverlay {position:relative;bottom:85px;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;float:left;}
-.customoverlay:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
-.customoverlay a {display:block;text-decoration:none;color:#000;text-align:center;border-radius:6px;font-size:14px;font-weight:bold;overflow:hidden;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
-.customoverlay .title {display:block;text-align:center;background:#fff;margin-right:35px;padding:10px 15px;font-size:14px;font-weight:bold;}
-.customoverlay:after {content:'';position:absolute;margin-left:-12px;left:50%;bottom:-12px;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+#map{
+  border-radius:1rem;
+  width:350px;
+  height:250px;
+  margin: 0 auto;
+  /*border-width: 0.1px;*/
+  /*border-style: solid;*/
+  /*border-color: #666;*/
+  /*border: 0.1em solid #666666;*/
+  box-shadow: 5px 10px 8px #666666;
+}
 
-/*.overlaybox {position:relative;width:360px;height:350px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;padding:15px 10px;}*/
-/*.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}*/
-/*.overlaybox li {list-style: none;}*/
-/*.overlaybox .boxtitle {color:#fff;font-size:16px;font-weight:bold;text-align:center;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;margin-bottom:8px;}*/
-/*.overlaybox .first {position:relative;width:247px;height:136px;background:url('@/assets/icon/wedding.png') no-repeat center;margin-bottom:8px;background-size: 50%;}*/
-/*.first .text {color:#fff;font-weight:bold; text-align: center}*/
-/*.first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}*/
-/*.first .movietitle {position:absolute;width:100%;bottom:0;background:rgba(0,0,0,0.4);padding:7px 15px;font-size:14px;}*/
-/*.overlaybox ul {width:247px;}*/
-/*.overlaybox li {position:relative;margin-bottom:2px;background:#2b2d36;padding:5px 10px;color:#aaabaf;line-height: 1;}*/
-/*!*.overlaybox li span {display:block;}*!*/
-/*.overlaybox li .number {font-size:16px;font-weight:bold;}*/
-/*.overlaybox li .title {font-size:13px; position:absolute; right:5px;}*/
-/*.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;}*/
-/*.overlaybox li .up {background-position:0 -40px;}*/
-/*.overlaybox li .down {background-position:0 -60px;}*/
-/*.overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}*/
-/*.overlaybox li:hover {color:#fff;background:#d24545;}*/
-/*.overlaybox li:hover .up {background-position:0 0px;}*/
-/*.overlaybox li:hover .down {background-position:0 -20px;}*/
+.small{
+  margin-top: 12px;
+  font-size:0.8rem;
+  color:#666;
+  text-align: center;
+}
+
+.title{
+  text-align: center;
+  margin-top:30px;
+  margin-bottom:20px;
+  font-weight:700;
+  text-align: center;
+  margin-bottom:10px;
+  line-height: 1.8em;
+  font-size:1rem;
+  color:#202121;
+& .point {
+    color:#587850;
+  }
+}
 </style>
