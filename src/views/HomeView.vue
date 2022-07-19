@@ -27,6 +27,7 @@ import Opening from '../components/Opening.vue';
 // eslint-disable-next-line
 import MainGallery from '../components/MainGallery.vue';
 import Calendar from '../components/Calendar.vue';
+// eslint-disable-next-line
 import Location from '../components/Location.vue';
 // eslint-disable-next-line
 import Contact from '../components/Contact.vue';
@@ -125,7 +126,7 @@ export default {
           trigger: '#closing',
           // markers: true,
           ease: 'expo',
-          start: 'top 75%',
+          start: 'top bottom',
           // toggleActions: 'restart none reverse none',
         },
         autoAlpha: 0,
@@ -159,13 +160,17 @@ body{
   align-items: center;
 }
 .mainFrame{
-  margin-top: 15px;
+  /*margin-top: 30px;*/
+  /*padding-top: 40px;*/
   margin: 0 auto;
   display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   max-width: 550px;
+  top: 50px;
+  /*padding-top: 50px;*/
+  /*position: absolute;*/
   /*background: #2e7d32;*/
 }
 .titleFrame{

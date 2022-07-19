@@ -31,15 +31,15 @@ export default {
       //     .to({}, { duration: 2 });
       // });
       // gsap.set('.horizon_box', { autoAlpha: 0 });
-      gsap.defaults({ ease: 'none', duration: 3, laze: false });
+      gsap.defaults({ ease: 'none', duration: 3, laze: true });
       gsap.set('.horizon_box', { autoAlpha: 0 });
       const t1 = gsap.timeline({
         scrollTrigger: {
           trigger: '#section',
           pin: true,
-          scrub: true,
+          scrub: 0.2,
           start: 'top top',
-          end: '+=9000',
+          end: '+=6000',
           // markers: true,
         },
       });
@@ -89,6 +89,7 @@ export default {
             scale: 1,
           },
         )
+        .to({}, { duration: 1 })
         .to('.menuFrame', { autoAlpha: 1, duration: 3 });
       // .to({}, { duration: 2 });
       // ScrollTrigger.matchMedia({

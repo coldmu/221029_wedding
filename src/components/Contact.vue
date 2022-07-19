@@ -261,7 +261,7 @@ export default {
   max-width: 550px;
   /*margin: 0;*/
   padding: 0 1%;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 .contactImg { display:inline-block;
   width:45px;
@@ -337,9 +337,10 @@ export default {
   /*padding:0.5rem;*/
   /*margin-bottom: 8px;*/
 }
-.contactText {margin-top:10px;
-  font-size:0.85rem;
-font-weight: bold;
+.contactText {
+  margin-top:10px;
+  font-size: clamp(10px, 3.8vw, 14px);
+  font-weight: 600;
   /*margin-bottom: 30px;*/
 }
 

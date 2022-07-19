@@ -54,7 +54,7 @@ export default {
       const staticMap = new kakao.maps.StaticMap(container, options);
     },
     openMap() {
-      window.open('https://m.map.kakao.com/actions/searchView?q=%EB%8D%94%EC%97%A0%EC%BB%A8%EB%B2%A4%EC%85%98&wxEnc=MNMTPP&wyEnc=QNOQLNN&lvl=4#!/579868035/map/place');
+      window.open('https://map.kakao.com/?itemId=579868035');
     },
   },
 };
@@ -68,13 +68,14 @@ export default {
   width: 95vw;
   max-width: 550px;
   padding: 0 1%;
-  margin-top: 30px;
+  margin-top: 50px;
   overflow: hidden;
 }
 
 #map{
   border-radius:1rem;
-  width:350px;
+  width: 90vw;
+  max-width:350px;
   height:250px;
   margin: 0 auto;
   /*border-width: 0.1px;*/

@@ -15,23 +15,43 @@ export default {
   // eslint-disable-next-line
   name: 'Menu',
   setup() {
+    const headerOffset = 45;
+    let elementPosition;
+    let element = '';
+    let offsetPosition = 0;
+
     const scrollToTop = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
     const scrollToGallery = () => {
-      document
-        .getElementById('mainGallery')
-        .scrollIntoView({ behavior: 'smooth' });
+      element = document.getElementById('mainGallery');
+      elementPosition = element.getBoundingClientRect().top;
+      offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     };
     const scrollToLocation = () => {
-      document
-        .getElementById('location')
-        .scrollIntoView({ behavior: 'smooth' });
+      element = document.getElementById('location');
+      elementPosition = element.getBoundingClientRect().top;
+      offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     };
     const scrollToContact = () => {
-      document
-        .getElementById('contact')
-        .scrollIntoView({ behavior: 'smooth' });
+      element = document.getElementById('contact');
+      elementPosition = element.getBoundingClientRect().top;
+      offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
     };
     return {
       scrollToTop,
@@ -63,6 +83,7 @@ export default {
   right: 0;
   margin: 0 auto;
   padding-top: 10px;
+  height: 40px;
   background: #fff;
   z-index:1000;
 }
@@ -71,8 +92,8 @@ export default {
   width: 25%;
   font-family: 'KimNamyun';
   font-size: clamp(14px, 4vw, 18px);
-  margin:5px 5px 1px 5px;
-  padding:5px 10px 1px 10px;
+  /*margin:5px 5px 1px 5px;*/
+  /*padding:5px 10px 1px 10px;*/
   /*background:rgba(200,200,200,0);*/
   border-radius:5px;
   /*font-weight: bold;*/

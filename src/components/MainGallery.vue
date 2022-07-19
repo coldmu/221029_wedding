@@ -112,7 +112,7 @@ export default {
   width: 95vw;
   max-width: 550px;
   padding: 0 1%;
-  margin-top: 30px;
+  margin-top: 50px;
   text-align: center;
 }
 

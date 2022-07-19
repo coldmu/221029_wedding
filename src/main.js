@@ -12,6 +12,7 @@ loadFonts();
 
 // eslint-disable-next-line import/prefer-default-export
 export const app = createApp(App);
+
 // eslint-disable-next-line new-cap
 app.use(router)
   .use(store)
