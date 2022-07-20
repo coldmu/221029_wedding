@@ -14,10 +14,10 @@
     </div>
     <div class="familyTextFrame">
       <div class="familyText">
-        <span><strong>양준희·오옥순</strong></span><span>의 아들</span><span class="heroText">찬무</span>
+        <span class="strong">양준희·오옥순</span><span>의 장남</span><span class="heroText">찬무</span>
       </div>
       <div class="familyText">
-        <span><strong>박석곤·유미영</strong></span><span>의 딸</span><span class="heroText">혜진</span>
+        <span class="strong">박석곤·유미영</span><span>의 장녀</span><span class="heroText">혜진</span>
       </div>
     </div>
   </section>
@@ -57,8 +57,9 @@ export default {
   display: flex;
   margin: 0 auto 10px auto;
   justify-content: space-between;
+  align-items: center;
 }
-.familyText > strong {
+.strong {
     font-size:1.2rem;
     margin:0 5px;
 }

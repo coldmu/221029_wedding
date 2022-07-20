@@ -106,6 +106,8 @@
     </div>
     </div>
   </vue-final-modal>
+
+  <v-button @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-button>
 </template>
 
 <script>
@@ -115,6 +117,21 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: 'Contact',
   setup() {
+    // 카카오톡 공유기능
+    // const { Kakao } = useKakao();
+    // init 체크
+    if (!window.Kakao.isInitialized()) {
+      window.Kakao.init('c4b18e4aa51935b6d7c39216d3dbdc48');
+    }
+
+    const sendKakao = () => {
+      // 메시지 공유 함수
+      window.Kakao.Link.sendScrap({
+        requestUrl: 'http://localhost:8080/', // 페이지 url
+        templateId: 79968, // 메시지템플릿 번호
+      });
+    };
+
     const inputAccountBank = ref(null);
     const inputAccountName = ref(null);
     const inputAccountNum = ref(null);
@@ -170,6 +187,7 @@ export default {
       inputAccountName,
       inputAccountNum,
       inputPhone,
+      sendKakao,
     };
   },
   methods: {
@@ -339,7 +357,7 @@ export default {
 }
 .contactText {
   margin-top:10px;
-  font-size: clamp(10px, 3.8vw, 14px);
+  font-size: clamp(9px, 3.7vw, 14px);
   font-weight: 600;
   /*margin-bottom: 30px;*/
 }
@@ -373,16 +391,17 @@ export default {
 a {text-decoration: none;}
 
 .kakaoBtn{
-  padding: 5px 10px;
-  font-size: 0.7rem;
   border: 0;
-  border-radius: 5px;
-  display: inline-block;
-  text-align: left;
-  margin-top: 3px;
   background: #fce445;
+  border-radius: 5px;
   font-family: 'Cafe24Oneprettynight';
+  font-weight: 800;
   color: #202121;
+  padding: 10px 20px;
+  /*width:100%;*/
+  margin:50px auto;
+  margin-bottom:50px;
+  text-align:center;
 }
 ::v-deep .modal-container {
   display: flex;

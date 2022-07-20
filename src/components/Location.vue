@@ -12,7 +12,7 @@
       <p>22년 10월 29일 토요일 오후 12시 30분</p>
       <p class="point">더엠컨벤션(구 MBC 웨딩홀)</p>
       <p>9층 피에스타홀</p>
-      <p>052) xxx-xxxx</p>
+      <p>052) 291-5500</p>
     </div>
   </section>
 </template>
