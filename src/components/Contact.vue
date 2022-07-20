@@ -357,7 +357,7 @@ export default {
 }
 .contactText {
   margin-top:10px;
-  font-size: clamp(9px, 3.7vw, 14px);
+  font-size: clamp(8px, 3.4vw, 14px);
   font-weight: 600;
   /*margin-bottom: 30px;*/
 }
