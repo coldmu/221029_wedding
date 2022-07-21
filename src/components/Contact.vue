@@ -292,6 +292,7 @@ export default {
 .contactModalPhone{
   display: flex;
   width:100%;
+  /*justify-content: space-between;*/
   justify-content: space-between;
   align-items: center;
   /*margin-top:5px;*/
@@ -363,25 +364,25 @@ export default {
 }
 
 .callBtn {
-  height: 1.7rem;
+  height: 1.8rem;
   padding: 5px 10px;
   font-size: 0.7rem;
   border: 0;
   border-radius: 5px;
   background: #22b572;
-  display: inline-block;
+  display: flex;
   color: #fff;
   font-family: 'Cafe24Oneprettynight';
-  text-align: center;
+  align-items: center;
   /*margin: 2px 0;*/
 }
 .copyBtn {
-  height: 1.7rem;
+  height: 1.8rem;
   padding: 5px 10px;
   font-size: 0.7rem;
   border: 0;
   border-radius: 5px;
-  background: #C2B93B;
+  background: #FD8E5A;
   display: inline-block;
   color: #fff;
   font-family: 'Cafe24Oneprettynight';
@@ -414,7 +415,7 @@ a {text-decoration: none;}
   flex-direction: column;
   padding: 1.5rem 1rem 0.5rem 1rem;
   border: 1px solid #e2e8f0;
-  border-radius: 0.25rem;
+  border-radius: 1rem;
   background: #fff;
   width: 95vw;
   max-width: 500px;

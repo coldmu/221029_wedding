@@ -86,7 +86,7 @@ export default {
 }
 
 .small{
-  margin-top: 12px;
+  margin-top: 15px;
   font-size:0.8rem;
   color:#666;
   text-align: center;
