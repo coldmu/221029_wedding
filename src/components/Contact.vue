@@ -2,7 +2,7 @@
   <section class="contact" id="contact">
     <div class="titleFrame">
       <p class="contentSubTitle">Contact</p>
-      <p class="contentTitle">연락처 확인하기</p>
+      <p class="contentTitle">마음 전하실 곳</p>
     </div>
     <div class="contactBtn">
     <div class="leftBtn">
@@ -107,7 +107,7 @@
     </div>
   </vue-final-modal>
 
-  <v-button @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-button>
+  <v-btn @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-btn>
 </template>
 
 <script>

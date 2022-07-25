@@ -44,6 +44,7 @@ export default {
         },
       });
       t1.to('.menuFrame', { autoAlpha: 0, duration: 0.5 })
+        .to('#kakaoShare', { autoAlpha: 0, duration: 0 })
         .fromTo(
           '.box1',
           {
@@ -90,6 +91,7 @@ export default {
           },
         )
         .to({}, { duration: 1 })
+        .to('#kakaoShare', { autoAlpha: 1, duration: 0 })
         .to('.menuFrame', { autoAlpha: 1, duration: 3 });
       // .to({}, { duration: 2 });
       // ScrollTrigger.matchMedia({

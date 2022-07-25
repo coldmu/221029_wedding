@@ -1,6 +1,7 @@
 <template>
   <div class="main_container">
     <Menu/>
+    <KakaoShare/>
     <StoryGallery/>
     <div class="mainFrame">
       <Opening/>
@@ -8,7 +9,7 @@
       <Calendar/>
       <Location/>
       <Contact/>
-      <Closing/>
+      <Recommendation/>
     </div>
     <Footer/>
   </div>
@@ -24,6 +25,7 @@ import { onMounted, onUnmounted } from 'vue';
 // eslint-disable-next-line
 import StoryGallery from '../components/StoryGallery.vue';
 import Opening from '../components/Opening.vue';
+import KakaoShare from '../components/KakaoShare.vue';
 // eslint-disable-next-line
 import MainGallery from '../components/MainGallery.vue';
 import Calendar from '../components/Calendar.vue';
@@ -31,7 +33,7 @@ import Calendar from '../components/Calendar.vue';
 import Location from '../components/Location.vue';
 // eslint-disable-next-line
 import Contact from '../components/Contact.vue';
-import Closing from '../components/Closing.vue';
+import Recommendation from '../components/Recommendation.vue';
 import Menu from '../components/Menu.vue';
 import Footer from '../components/Footer.vue';
 
@@ -47,9 +49,10 @@ export default {
     Calendar,
     Location,
     Contact,
-    Closing,
+    Recommendation,
     Menu,
     Footer,
+    KakaoShare,
   },
   setup() {
     const triggers = ScrollTrigger.getAll();
@@ -121,9 +124,9 @@ export default {
         duration: 1,
       });
 
-      gsap.from('#closing', {
+      gsap.from('#recommendation', {
         scrollTrigger: {
-          trigger: '#closing',
+          trigger: '#recommendation',
           // markers: true,
           ease: 'expo',
           start: 'top bottom',

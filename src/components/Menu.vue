@@ -1,12 +1,12 @@
 <template>
   <div class="menuFrame">
+    <div class="verticalLineInvisible"></div>
     <div class="menuText" @click="scrollToTop" @keydown="scrollToTop">찬무 ♥ 혜진</div>
     <div class="verticalLine"></div>
     <div class="menuText" @click="scrollToGallery" @keydown="scrollToGallery">사진첩</div>
     <div class="verticalLine"></div>
     <div class="menuText" @click="scrollToLocation" @keydown="scrollToLocation">오시는 길</div>
-    <div class="verticalLine"></div>
-    <div class="menuText" @click="scrollToContact" @keydown="scrollToContact">연락처</div>
+    <div class="verticalLineInvisible"></div>
   </div>
 </template>
 
@@ -105,6 +105,11 @@ export default {
 
 .verticalLine{
   width:1px;
+  height:10px;
+  background:#000000;
+}
+.verticalLineInvisible{
+  width:0px;
   height:10px;
   background:#000000;
 }
