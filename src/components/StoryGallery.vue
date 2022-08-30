@@ -44,8 +44,8 @@ export default {
         },
       });
       t1.to('.menuFrame', { autoAlpha: 0, duration: 0.5 })
-        .to('#kakaoShare', { autoAlpha: 0, duration: 2 })
-        .to('#scrollDown', { autoAlpha: 0, duration: 2 })
+        .to('#kakaoShare', { autoAlpha: 0, duration: 1 })
+        .to('#scrollDown', { autoAlpha: 0, duration: 1 })
         .fromTo(
           '.box1',
           {

@@ -53,12 +53,12 @@ export default {
 }
 
 .scrolldown_img{
-  width: 10vw;
+  width: 15vw;
 }
 
 .scroll_text{
   text-align: center;
-  font-size:1.3vw;
+  font-size:2vw;
   font-weight: 600;
 }
 
