@@ -1,4 +1,8 @@
 <template>
+  <div id="scrollDown">
+    <p class="scroll_text">화면을 아래로<br>내려주세요</p>
+    <img :src="require(`@/assets/icon/scrolldown.gif`)" alt="scrolldown" class="scrolldown_img">
+  </div>
 
   <div id="kakaoShare">
     <v-btn
@@ -13,7 +17,7 @@
 <script>
 export default {
   // eslint-disable-next-line
-  name: 'KakaoShare',
+  name: 'FloatingMenu',
   setup() {
     // 카카오톡 공유기능
     // const { Kakao } = useKakao();
@@ -38,12 +42,31 @@ export default {
 </script>
 
 <style>
+#scrollDown{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  bottom: 40vh; /* 아래 끝에서부터의 거리 */
+  right: 15px; /* 오른쪽 끝에서부터의 거리 */
+  z-index: 99;
+}
+
+.scrolldown_img{
+  width: 10vw;
+}
+
+.scroll_text{
+  text-align: center;
+  font-size:1.3vw;
+  font-weight: 600;
+}
+
 #kakaoShare{
   position: fixed;
   bottom: 25px; /* 아래 끝에서부터의 거리 */
   right: 15px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
-
 }
 
 .kakaoShareBtn{

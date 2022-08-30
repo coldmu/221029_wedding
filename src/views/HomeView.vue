@@ -1,7 +1,7 @@
 <template>
   <div class="main_container">
     <Menu/>
-    <KakaoShare/>
+    <FloatingMenu/>
     <StoryGallery/>
     <div class="mainFrame">
       <Opening/>
@@ -25,7 +25,7 @@ import { onMounted, onUnmounted } from 'vue';
 // eslint-disable-next-line
 import StoryGallery from '../components/StoryGallery.vue';
 import Opening from '../components/Opening.vue';
-import KakaoShare from '../components/KakaoShare.vue';
+import FloatingMenu from '../components/FloatingMenu.vue';
 // eslint-disable-next-line
 import MainGallery from '../components/MainGallery.vue';
 import Calendar from '../components/Calendar.vue';
@@ -52,7 +52,7 @@ export default {
     Recommendation,
     Menu,
     Footer,
-    KakaoShare,
+    FloatingMenu,
   },
   setup() {
     const triggers = ScrollTrigger.getAll();
