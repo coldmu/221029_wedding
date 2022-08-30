@@ -400,7 +400,7 @@ a {text-decoration: none;}
   color: #202121;
   padding: 10px 20px;
   /*width:100%;*/
-  margin:50px auto;
+  margin:40px auto;
   margin-bottom:50px;
   text-align:center;
 }

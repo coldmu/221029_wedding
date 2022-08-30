@@ -14,6 +14,11 @@
       <p>9층 피에스타홀</p>
       <p>052) 291-5500</p>
     </div>
+
+    <div class="timetableFrame">
+      <img :src="require(`@/assets/images/timetable.png`)" alt="timetable" class="timetable_img">
+    </div>
+
   </section>
 </template>
 
@@ -106,4 +111,19 @@ export default {
     color:#587850;
   }
 }
+
+.timetable_img {
+  width: 85vw;
+  max-width: 400px;
+  border-radius:1rem;
+  margin-top: 30px;
+  //box-shadow: 1px 1px 1px #666666;
+  margin-bottom: 5px;
+}
+
+.timetableFrame{
+  display: flex;
+  justify-content: center;
+}
+
 </style>

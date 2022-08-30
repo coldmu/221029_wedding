@@ -1,7 +1,6 @@
 <template>
   <div id="scrollDown">
-    <p class="scroll_text">화면을 아래로<br>내려주세요</p>
-    <img :src="require(`@/assets/icon/scrolldown.gif`)" alt="scrolldown" class="scrolldown_img">
+    <Vue3Lottie :animationData="SwipeJSON" :height="200" :width="180"></Vue3Lottie>
   </div>
 
   <div id="kakaoShare">
@@ -15,9 +14,21 @@
 </template>
 
 <script>
+import { Vue3Lottie } from 'vue3-lottie';
+import 'vue3-lottie/dist/style.css';
+// eslint-disable-next-line
+import SwipeJSON from '../assets/icon/swipe.json';
 export default {
   // eslint-disable-next-line
   name: 'FloatingMenu',
+  components: {
+    Vue3Lottie,
+  },
+  data() {
+    return {
+      SwipeJSON,
+    };
+  },
   setup() {
     // 카카오톡 공유기능
     // const { Kakao } = useKakao();
@@ -44,11 +55,11 @@ export default {
 <style>
 #scrollDown{
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  bottom: 40vh; /* 아래 끝에서부터의 거리 */
-  right: 15px; /* 오른쪽 끝에서부터의 거리 */
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  bottom: 30px; /* 아래 끝에서부터의 거리 */
+  right: 0px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
 }
 
