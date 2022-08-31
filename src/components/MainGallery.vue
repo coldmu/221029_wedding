@@ -14,10 +14,10 @@
       >
         <template #default="scope">
           <figure class="images">
-            <div v-for="{source, thumbnail} in scope.images" :key="source" class="image-wrapper">
+            <div v-for="{source} in scope.images" :key="source" class="image-wrapper">
               <img
                 class="image"
-                :src="thumbnail"
+                :src="source"
                 :data-src="source"
                 alt="mainGallery"
               >
@@ -137,18 +137,37 @@ export default {
 
     .image-wrapper {
       display: flex;
+      position: relative;
       width: 25%;
+      //height: 25%;
+      //padding-bottom: 25%;
       overflow: hidden;
-      padding: 1px;
-
-      .image {
+      //padding: 1px;
+    }
+    .image-wrapper:after {
+      content: "";
+      display: block;
+      //display: flex;
+      //width: 25%;
+      //height: 25%;
+      padding-bottom: 100%;
+      //overflow: hidden;
+      //padding: 1px;
+    }
+      .image-wrapper > img {
+        position: absolute;
+        //min-height: 100%;
+        //min-width: 100%;
+        //transform: translate(50, 50);
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //width: 100%;
         cursor: pointer;
-        margin: 0;
-        padding: 0;
+        //margin: 0;
+        //padding: 0;
       }
 
-    }
   }
 }
 </style>

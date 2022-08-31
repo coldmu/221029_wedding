@@ -203,32 +203,32 @@ export default {
 <template>
   <section id="section">
       <div class="box box1 horizon_box">
-        <img :src="require(`@/assets/storyImages/1.jpg`)" alt="1" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/1.jpg`)" alt="1" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">혜진 ♥ 찬무</p></div>
       </div>
       <div class="box box2 horizon_box">
-        <img :src="require(`@/assets/storyImages/2.jpg`)" alt="2" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/2.jpg`)" alt="2" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">5년 연애 끝에<br>저희 결혼합니다!!</p></div>
       </div>
       <div class="box box3 horizon_box">
-        <img :src="require(`@/assets/storyImages/3.jpg`)" alt="3" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/3.jpg`)" alt="3" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">2018년 3월 17일</p></div>
       </div>
       <div class="box box4 horizon_box">
-        <img :src="require(`@/assets/storyImages/4.jpg`)" alt="4" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/4.jpg`)" alt="4" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">설렘의 마음을 가득 안고 시작한 우리</p></div>
       </div>
       <div class="box box5 horizon_box">
-        <img :src="require(`@/assets/storyImages/5.jpg`)" alt="5" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/5.jpg`)" alt="5" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">살아온 환경, 좋아하는 것<br>취미, 성격도 다른 우리가</p></div>
       </div>
       <div class="box box6 horizon_box">
-        <img :src="require(`@/assets/storyImages/6.jpg`)" alt="6" class="storyIamgeVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/6.jpg`)" alt="6" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">인생의 여정을 함께 시작하려 합니다</p></div>
       </div>
       <div class="box box7 horizon_box">
-        <img :src="require(`@/assets/storyImages/7.jpg`)" alt="7" class="storyIamgeVertical" loading="eager">
-        <div class="storyTextDiv"><p class="storyText">검은머리 (찬)무뿌리 될 때까지<br>행복하고 재미있게 살겠습니다!!</p></div>
+        <img :src="require(`@/assets/storyImages/7.jpg`)" alt="7" class="storyImageVertical" loading="eager">
+        <div class="storyTextDiv"><p class="storyText">검은머리 (찬)무뿌리 될 때까지<br>행복하고 재미있게 잘 살겠습니다!!</p></div>
       </div>
       <div class="box box8 horizon_box">
         <img :src="require(`@/assets/storyImages/8.jpg`)" alt="8" class="storyEnd" loading="eager">
@@ -247,7 +247,7 @@ section { position: relative; height: 100vh; width: 100vw; max-width: 550px; mar
 .box2 { height: 100%; z-index: 9998}
 .box3 { height: 100%; z-index: 9997}
 .box4 { height: 100%; z-index: 9996}
-.storyIamgeVertical { height: 75vh; max-width: 100%; }
+.storyImageVertical { height: 75vh; max-width: 100%; }
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; }
 .storyEnd { width: 100vw; max-width: 550px;}
 .storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; line-height: 150%;}
