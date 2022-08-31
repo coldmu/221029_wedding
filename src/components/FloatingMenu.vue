@@ -59,7 +59,7 @@ export default {
   /*flex-direction: column;*/
   /*align-items: center;*/
   bottom: 30px; /* 아래 끝에서부터의 거리 */
-  right: 0px; /* 오른쪽 끝에서부터의 거리 */
+  right: -30px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
 }
 
@@ -75,8 +75,8 @@ export default {
 
 #kakaoShare{
   position: fixed;
-  bottom: 25px; /* 아래 끝에서부터의 거리 */
-  right: 15px; /* 오른쪽 끝에서부터의 거리 */
+  bottom: 30px; /* 아래 끝에서부터의 거리 */
+  right: 25px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
 }
 
