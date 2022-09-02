@@ -206,7 +206,7 @@ export default {
       contactInfo: {
         chanmu: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/chanmu.png`),
+          url: require(`@/assets/images/chanmu_2.jpg`),
           name: '신랑 양찬무',
           phone: '01000000001',
           account: '은행 123123123 (양찬무)',
@@ -216,7 +216,7 @@ export default {
         },
         c_dad: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/c_dad.png`),
+          url: require(`@/assets/images/c_dad.jpg`),
           name: '아버지 양준희',
           phone: '01000000002',
           account: '은행 123123123 (양준희)',
@@ -226,7 +226,7 @@ export default {
         },
         c_mom: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/c_mom.png`),
+          url: require(`@/assets/images/c_mom_3.jpg`),
           name: '어머니 오옥순',
           phone: '01000000003',
           account: '은행 123123123 (양준희)',
@@ -236,7 +236,7 @@ export default {
         },
         hyejin: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/hyejin.png`),
+          url: require(`@/assets/images/hyejin_2.jpg`),
           name: '신부 박혜진',
           phone: '01000000000',
           account: '은행 123123123 (박혜진)',

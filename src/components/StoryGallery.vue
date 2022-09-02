@@ -249,7 +249,7 @@ section { position: relative; height: 100vh; width: 100vw; max-width: 550px; mar
 .box4 { height: 100%; z-index: 9996}
 .storyImageVertical { height: 75vh; max-width: 100%; }
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; }
-.storyEnd { width: 100vw; max-width: 550px;}
+.storyEnd { height: 85vh; max-width: 100%;}
 .storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; line-height: 150%;}
 .storyTextDiv { height: 10%; margin-top: 3vh;}
 </style>
