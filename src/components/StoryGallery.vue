@@ -212,7 +212,7 @@ export default {
       </div>
       <div class="box box3 horizon_box">
         <img :src="require(`@/assets/storyImages/3.jpg`)" alt="3" class="storyImageVertical" loading="eager">
-        <div class="storyTextDiv"><p class="storyText">2018년 3월 17일</p></div>
+        <div class="storyTextDiv"><p class="storyText">2018년, 따뜻한 봄날</p></div>
       </div>
       <div class="box box4 horizon_box">
         <img :src="require(`@/assets/storyImages/4.jpg`)" alt="4" class="storyImageVertical" loading="eager">

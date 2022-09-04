@@ -32,7 +32,7 @@
 
 <script>
 const sourceImages = [];
-for (let i = 1; i <= 29; i += 1) {
+for (let i = 1; i <= 28; i += 1) {
   sourceImages.push({
     /* eslint-disable */
     thumbnail: require(`@/assets/galleryImages/thumbnails/${i}.jpg`),

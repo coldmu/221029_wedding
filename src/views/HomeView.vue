@@ -5,8 +5,8 @@
     <StoryGallery/>
     <div class="mainFrame">
       <Opening/>
-      <MainGallery/>
       <Calendar/>
+      <MainGallery/>
       <Location/>
       <Contact/>
       <Recommendation/>

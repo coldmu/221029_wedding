@@ -5,43 +5,46 @@
       <p class="contentTitle">마음 전하실 곳</p>
     </div>
     <div class="contactBtn">
-    <div class="leftBtn">
-    <div class="upperBtn">
-    <v-button @click="showModal = true; contactPerson = 'chanmu'" class="contactFrame">
-      <img :src="contactInfo.chanmu.url" alt="1" class="contactImg c_img">
-      <p class="contactText">{{contactInfo.chanmu.name}}</p>
-    </v-button>
+      <div class="leftBtn">
+        <div class="upperBtn">
+          <v-button @click="showModal = true; contactPerson = 'chanmu'" class="contactFrame">
+            <img :src="contactInfo.chanmu.url" alt="1" class="contactImg c_img">
+            <p class="contactText">{{contactInfo.chanmu.name}}</p>
+          </v-button>
+        </div>
+        <div class="bottomBtn">
+          <v-button @click="showModal = true; contactPerson = 'c_dad'" class="contactFrame">
+            <img :src="contactInfo.c_dad.url" alt="1" class="contactImg cdad_img">
+            <p class="contactText">{{contactInfo.c_dad.name}}</p>
+          </v-button>
+          <v-button @click="showModal = true; contactPerson = 'c_mom'" class="contactFrame">
+            <img :src="contactInfo.c_mom.url" alt="1" class="contactImg cmom_img">
+            <p class="contactText">{{contactInfo.c_mom.name}}</p>
+          </v-button>
+        </div>
+      </div>
+      <div class="rightBtn">
+        <div class="upperBtn">
+          <v-button @click="showModal = true; contactPerson = 'hyejin'" class="contactFrame">
+            <img :src="contactInfo.hyejin.url" alt="1" class="contactImg h_img">
+            <p class="contactText">{{contactInfo.hyejin.name}}</p>
+          </v-button>
+        </div>
+        <div class="bottomBtn">
+          <v-button @click="showModal = true; contactPerson = 'h_dad'" class="contactFrame">
+            <img :src="contactInfo.h_dad.url" alt="1" class="contactImg">
+            <p class="contactText">{{contactInfo.h_dad.name}}</p>
+          </v-button>
+          <v-button @click="showModal = true; contactPerson = 'h_mom'" class="contactFrame">
+            <img :src="contactInfo.h_mom.url" alt="1" class="contactImg">
+            <p class="contactText">{{contactInfo.h_mom.name}}</p>
+          </v-button>
+        </div>
+     </div>
     </div>
-    <div class="bottomBtn">
-    <v-button @click="showModal = true; contactPerson = 'c_dad'" class="contactFrame">
-      <img :src="contactInfo.c_dad.url" alt="1" class="contactImg cdad_img">
-      <p class="contactText">{{contactInfo.c_dad.name}}</p>
-    </v-button>
-    <v-button @click="showModal = true; contactPerson = 'c_mom'" class="contactFrame">
-      <img :src="contactInfo.c_mom.url" alt="1" class="contactImg cmom_img">
-      <p class="contactText">{{contactInfo.c_mom.name}}</p>
-    </v-button>
-    </div>
-</div>
-
-    <div class="rightBtn">
-    <div class="upperBtn">
-    <v-button @click="showModal = true; contactPerson = 'hyejin'" class="contactFrame">
-      <img :src="contactInfo.hyejin.url" alt="1" class="contactImg h_img">
-      <p class="contactText">{{contactInfo.hyejin.name}}</p>
-    </v-button>
-    </div>
-    <div class="bottomBtn">
-    <v-button @click="showModal = true; contactPerson = 'h_dad'" class="contactFrame">
-      <img :src="contactInfo.h_dad.url" alt="1" class="contactImg">
-      <p class="contactText">{{contactInfo.h_dad.name}}</p>
-    </v-button>
-    <v-button @click="showModal = true; contactPerson = 'h_mom'" class="contactFrame">
-      <img :src="contactInfo.h_mom.url" alt="1" class="contactImg">
-      <p class="contactText">{{contactInfo.h_mom.name}}</p>
-    </v-button>
-    </div>
-    </div>
+    <p class="small">위 사진을 클릭하시면 전화번호와 계좌번호를 확인하실 수 있습니다</p>
+    <div class="btnFrame">
+      <v-btn @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-btn>
     </div>
   </section>
 
@@ -86,9 +89,10 @@
     </button>
     <div class="copyModalFrame">
       <p><strong>{{ contactInfo[contactPerson].accountNum }} </strong></p>
-      <p>복사되었습니다.</p>
+      <p>계좌번호가 복사되었습니다.</p>
     <div class="modal__action">
-      <v-button @click="confirm">confirm</v-button>
+      <v-btn @click="confirm" class="copyConfirmBtn">확인</v-btn>
+<!--      <v-button @click="confirm">확인</v-button>-->
     </div>
     </div>
   </vue-final-modal>
@@ -102,12 +106,11 @@
     <div class="copyModalFrame">
       <p><strong>{{ contactInfo[contactPerson].phone }}</strong> 복사되었습니다.</p>
     <div class="modal__action">
-      <v-button @click="confirm">confirm</v-button>
+      <v-button @click="confirm">확인</v-button>
     </div>
     </div>
   </vue-final-modal>
 
-  <v-btn @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-btn>
 </template>
 
 <script>
@@ -208,17 +211,17 @@ export default {
           // eslint-disable-next-line
           url: require(`@/assets/images/chanmu_2.jpg`),
           name: '신랑 양찬무',
-          phone: '01000000001',
-          account: '은행 123123123 (양찬무)',
-          accountNum: '123123123',
-          accountBank: '농협은행',
+          phone: '010-4912-8773',
+          account: '카카오뱅크 3333-01-0949812 (양찬무)',
+          accountNum: '3333010949812',
+          accountBank: '카카오뱅크',
           accountName: '양찬무',
         },
         c_dad: {
           // eslint-disable-next-line
           url: require(`@/assets/images/c_dad.jpg`),
           name: '아버지 양준희',
-          phone: '01000000002',
+          phone: '010-5545-8773',
           account: '은행 123123123 (양준희)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -228,7 +231,7 @@ export default {
           // eslint-disable-next-line
           url: require(`@/assets/images/c_mom_3.jpg`),
           name: '어머니 오옥순',
-          phone: '01000000003',
+          phone: '010-5525-8773',
           account: '은행 123123123 (양준희)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -238,7 +241,7 @@ export default {
           // eslint-disable-next-line
           url: require(`@/assets/images/hyejin_2.jpg`),
           name: '신부 박혜진',
-          phone: '01000000000',
+          phone: '010-5125-8793',
           account: '은행 123123123 (박혜진)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -246,9 +249,9 @@ export default {
         },
         h_dad: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/h_dad.png`),
+          url: require(`@/assets/images/h_dad_2.jpg`),
           name: '아버지 박석곤',
-          phone: '01000000000',
+          phone: '010-9878-8793',
           account: '은행 123123123 (박석곤)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -256,9 +259,9 @@ export default {
         },
         h_mom: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/h_mom.png`),
+          url: require(`@/assets/images/h_mom_3.jpg`),
           name: '어머니 유미영',
-          phone: '01000000000',
+          phone: '010-7288-8793',
           account: '은행 123123123 (박석곤)',
           accountNum: '123123123',
           accountBank: '농협은행',
@@ -280,6 +283,13 @@ export default {
   /*margin: 0;*/
   padding: 0 1%;
   margin-top: 50px;
+}
+.small{
+  margin-top: 40px;
+  font-size:0.8rem;
+  font-weight: 600;
+  color:#666;
+  text-align: center;
 }
 .contactImg { display:inline-block;
   width:45px;
@@ -389,8 +399,17 @@ export default {
   text-align: center;
   /*margin: 2px 0;*/
 }
+
+.copyConfirmBtn{
+  font-size: 1rem;
+  padding: 0px;
+}
 a {text-decoration: none;}
 
+.btnFrame{
+  display: flex;
+  justify-content: center;
+}
 .kakaoBtn{
   border: 0;
   background: #fce445;
@@ -400,7 +419,7 @@ a {text-decoration: none;}
   color: #202121;
   padding: 10px 20px;
   /*width:100%;*/
-  margin:40px auto;
+  margin:15px auto;
   margin-bottom:50px;
   text-align:center;
 }
