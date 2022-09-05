@@ -44,7 +44,7 @@
     </div>
     <p class="small">위 사진을 클릭하시면 계좌번호를 확인하실 수 있습니다</p>
     <div class="btnFrame">
-      <v-btn @click="sendKakao" class="kakaoBtn" >카카오톡 공유하기</v-btn>
+      <v-btn @click="sendKakao" class="kakaoBtn" >청첩장 카톡 공유</v-btn>
     </div>
   </section>
 
@@ -209,7 +209,7 @@ export default {
       contactInfo: {
         chanmu: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/chanmu_2.jpg`),
+          url: require(`@/assets/images/chanmu.jpg`),
           name: '신랑 양찬무',
           phone: '010-4912-8773',
           account: '카카오뱅크 3333-01-0949812 (양찬무)',
@@ -229,7 +229,7 @@ export default {
         },
         c_mom: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/c_mom_3.jpg`),
+          url: require(`@/assets/images/c_mom.jpg`),
           name: '어머니 오옥순',
           phone: '010-5525-8773',
           account: '은행 123123123 (양준희)',
@@ -239,7 +239,7 @@ export default {
         },
         hyejin: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/hyejin_2.jpg`),
+          url: require(`@/assets/images/hyejin.jpg`),
           name: '신부 박혜진',
           phone: '010-5125-8793',
           account: '은행 123123123 (박혜진)',
@@ -249,7 +249,7 @@ export default {
         },
         h_dad: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/h_dad_2.jpg`),
+          url: require(`@/assets/images/h_dad.jpg`),
           name: '아버지 박석곤',
           phone: '010-9878-8793',
           account: '경남은행 531210000232 (박석곤)',
@@ -259,7 +259,7 @@ export default {
         },
         h_mom: {
           // eslint-disable-next-line
-          url: require(`@/assets/images/h_mom_3.jpg`),
+          url: require(`@/assets/images/h_mom.jpg`),
           name: '어머니 유미영',
           phone: '010-7288-8793',
           account: '단위농협 3561381572913 (유미영)',

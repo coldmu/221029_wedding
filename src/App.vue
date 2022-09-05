@@ -34,6 +34,9 @@ html {
   -ms-touch-action: pan-x pan-y;
   touch-action: pan-y;
 }
+body {
+  -webkit-touch-callout:none;
+}
 
 @font-face {
   font-family: 'KimNamyun';

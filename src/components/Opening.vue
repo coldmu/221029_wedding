@@ -6,7 +6,7 @@
     </div>
     <div class="content">
       <p>함께 웃던 기억들이 사랑이라는 이름으로</p>
-      <p>서로에게 마음속 깊이 자리 잡았습니다.</p>
+      <p>서로에게 마음 속 깊이 자리 잡았습니다.</p>
       <p>이제 두 사람이 하나가 될</p>
       <p>인생의 여정을 시작하려 합니다.</p>
       <p>그 소중한 약속의 시간,</p>
@@ -50,7 +50,7 @@ export default {
   max-width: 300px;
 }
 .familyText {
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
@@ -59,13 +59,13 @@ export default {
   align-items: center;
 }
 .strong {
-    font-size:1.3rem;
+    font-size:1.2rem;
     margin:0 5px;
 }
 
 .heroText {
     font-size:1.5rem;
-    font-weight: 1000;
+    font-weight: 800;
     margin:0 5px;
 }
 </style>
