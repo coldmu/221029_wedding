@@ -45,13 +45,12 @@ export default {
 }
 
 .familyTextFrame {
-  font-weight:600;
   width: 80%;
   margin: 0 auto;
   max-width: 300px;
 }
 .familyText {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   padding-left: 10px;
   padding-right: 10px;
   display: flex;
@@ -60,12 +59,13 @@ export default {
   align-items: center;
 }
 .strong {
-    font-size:1.2rem;
+    font-size:1.3rem;
     margin:0 5px;
 }
 
 .heroText {
-    font-size:1.4rem;
+    font-size:1.5rem;
+    font-weight: 1000;
     margin:0 5px;
 }
 </style>
