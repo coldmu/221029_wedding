@@ -29,6 +29,12 @@ export default {
 </script>
 
 <style>
+html {
+  -ms-content-zooming: none;
+  -ms-touch-action: pan-x pan-y;
+  touch-action: pan-y;
+}
+
 @font-face {
   font-family: 'KimNamyun';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KimNamyun.woff') format('woff');

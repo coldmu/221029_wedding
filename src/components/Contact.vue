@@ -44,7 +44,7 @@
     </div>
     <p class="small">위 사진을 클릭하시면 계좌번호를 확인하실 수 있습니다</p>
     <div class="btnFrame">
-      <v-btn @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-btn>
+      <v-btn @click="sendKakao" class="kakaoBtn" >카카오톡 공유하기</v-btn>
     </div>
   </section>
 
@@ -91,7 +91,7 @@
       <p><strong>{{ contactInfo[contactPerson].accountNum }} </strong></p>
       <p>계좌번호가 복사되었습니다.</p>
     <div class="modal__action">
-      <v-btn @click="confirm" class="copyConfirmBtn">확인</v-btn>
+      <v-btn small elevation="1" @click="confirm">확인</v-btn>
 <!--      <v-button @click="confirm">확인</v-button>-->
     </div>
     </div>
