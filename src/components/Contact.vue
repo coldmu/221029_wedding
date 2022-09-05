@@ -42,7 +42,7 @@
         </div>
      </div>
     </div>
-    <p class="small">위 사진을 클릭하시면 전화번호와 계좌번호를 확인하실 수 있습니다</p>
+    <p class="small">위 사진을 클릭하시면 계좌번호를 확인하실 수 있습니다</p>
     <div class="btnFrame">
       <v-btn @click="sendKakao" class="kakaoBtn">카카오톡 공유하기</v-btn>
     </div>
@@ -401,7 +401,7 @@ export default {
 }
 
 .copyConfirmBtn{
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 0px;
 }
 a {text-decoration: none;}
