@@ -85,4 +85,6 @@ div{
   /*margin: 0 auto;*/
 }
 
+.viewer-move{pointer-events : none;}
+/*.viewer-canvas{pointer-events : none;}*/
 </style>

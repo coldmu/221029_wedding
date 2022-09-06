@@ -123,8 +123,7 @@ export default {
 //.image{pointer-events : none;}
 //.images{pointer-events : none;}
 //.viewer-wrapper{pointer-events : none;}
-.viewer-move{pointer-events : none;}
-.viewer-canvas{pointer-events : none;}
+
 .galleryFrame{
   border-style: solid;
   border-width: 1px;
