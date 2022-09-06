@@ -35,12 +35,15 @@ html {
   touch-action: pan-y;
 }
 body {
-  -webkit-touch-callout:none;
-  -webkit-user-select: none !important;
-  -moz-user-select: -moz-none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
+
+img {pointer-events : none;}
 
 @font-face {
   font-family: 'KimNamyun';
