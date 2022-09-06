@@ -4,25 +4,22 @@
       <p class="contentSubTitle">Gallery</p>
       <p class="contentTitle">사진첩</p>
     </div>
-    <div class="viewer-wrapper" v-on:contextmenu.prevent="ctxStop">
+    <div class="viewer-wrapper">
       <viewer
         ref="viewer"
         :options="options"
         :images="images"
         class="viewer"
         @inited="inited"
-        v-on:contextmenu.prevent="ctxStop"
       >
         <template #default="scope">
-          <figure class="images" v-on:contextmenu.prevent="ctxStop">
-            <div v-for="{source} in scope.images" :key="source" class="image-wrapper" v-on:contextmenu.prevent="ctxStop">
+          <figure class="images">
+            <div v-for="{source} in scope.images" :key="source" class="image-wrapper">
               <img
                 class="image"
                 :src="source"
                 :data-src="source"
                 alt="mainGallery"
-                download="hi.jpg"
-
               >
             </div>
           </figure>
@@ -126,7 +123,8 @@ export default {
 //.image{pointer-events : none;}
 //.images{pointer-events : none;}
 //.viewer-wrapper{pointer-events : none;}
-
+.viewer-move{pointer-events : none;}
+.viewer-canvas{pointer-events : none;}
 .galleryFrame{
   border-style: solid;
   border-width: 1px;
