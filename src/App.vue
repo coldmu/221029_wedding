@@ -36,6 +36,10 @@ html {
 }
 body {
   -webkit-touch-callout:none;
+  -webkit-user-select: none !important;
+  -moz-user-select: -moz-none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
 }
 
 @font-face {

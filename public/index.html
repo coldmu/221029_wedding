@@ -14,12 +14,8 @@
     <meta property="og:image" content="/221029_wedding/img/thumbnail.png">
     <script defer="defer" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type="text/javascript">
-        //이미지만 우클릭 비활성
-        $(document).ready(function() {
-            $('img').bind("contextmenu",function(e){
-                alert("금지");
-                return false;
-            });
+        $(document).bind("contextmenu", function(e) {
+            return false;
         });
     </script>
 </head>

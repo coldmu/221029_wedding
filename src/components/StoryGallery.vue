@@ -203,7 +203,7 @@ export default {
 <template>
   <section id="section">
       <div class="box box1 horizon_box">
-        <img :src="require(`@/assets/storyImages/1.jpg`)" alt="1" class="storyImageVertical" loading="eager">
+        <img :src="require(`@/assets/storyImages/1.jpg`)" alt="1" class="storyImageVertical" loading="eager" oncontextmenu="return false">
         <div class="storyTextDiv"><p class="storyText">혜진 ♥ 찬무</p></div>
       </div>
       <div class="box box2 horizon_box">

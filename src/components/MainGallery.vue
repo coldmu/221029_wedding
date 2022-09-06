@@ -20,6 +20,7 @@
                 :src="source"
                 :data-src="source"
                 alt="mainGallery"
+                oncontextmenu="return false"
               >
             </div>
           </figure>
