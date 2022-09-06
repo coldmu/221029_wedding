@@ -14,13 +14,12 @@
       >
         <template #default="scope">
           <figure class="images">
-            <div v-for="{source} in scope.images" :key="source" class="image-wrapper">
+            <div v-for="{source} in scope.images" :key="source" class="image-wrapper" @contextmenu.prevent >
               <img
                 class="image"
                 :src="source"
                 :data-src="source"
                 alt="mainGallery"
-                oncontextmenu="return false"
               >
             </div>
           </figure>
