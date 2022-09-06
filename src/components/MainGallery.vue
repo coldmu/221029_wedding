@@ -11,16 +11,18 @@
         :images="images"
         class="viewer"
         @inited="inited"
+        v-on:contextmenu.prevent="ctxStop"
       >
         <template #default="scope">
-          <figure class="images">
-            <div v-for="{source} in scope.images" :key="source" class="image-wrapper">
+          <figure class="images" v-on:contextmenu.prevent="ctxStop">
+            <div v-for="{source} in scope.images" :key="source" class="image-wrapper" v-on:contextmenu.prevent="ctxStop">
               <img
                 class="image"
                 :src="source"
                 :data-src="source"
                 alt="mainGallery"
                 download="hi.jpg"
+
               >
             </div>
           </figure>
@@ -100,6 +102,9 @@ export default {
       this.$viewerApi({
         images: this.images,
       });
+    },
+    ctxStop(){
+      console.log("다른거");
     },
   },
 };
