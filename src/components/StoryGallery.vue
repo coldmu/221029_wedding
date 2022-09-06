@@ -240,7 +240,7 @@ export default {
 <style>
 section { position: relative; height: 100vh; width: 100vw; max-width: 550px; margin: 0 auto; overflow: hidden;}
 .horizon_box { position: absolute; top: 0; left:0;}
-.box { display: flex; justify-content: center; align-items: center; width: 100%; }
+.box { display: flex; justify-content: center; align-items: center; width: 100%; pointer-events : none;}
 .box { flex-direction: column; height: 100%;}
 .box_wrapper { background: red; }
 .box1 { height: 100%; z-index: 9999}
