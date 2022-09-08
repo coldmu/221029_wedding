@@ -106,7 +106,7 @@ export default {
 //.image{pointer-events : none;}
 //.images{pointer-events : none;}
 //.viewer-wrapper{pointer-events : none;}
-
+.pswp__img{pointer-events : none;}
 .galleryFrame{
   border-style: solid;
   border-width: 1px;
