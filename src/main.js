@@ -1,9 +1,9 @@
 import { createApp } from 'vue';
 import { vfmPlugin } from 'vue-final-modal';
-import 'viewerjs/dist/viewer.css';
+// import 'viewerjs/dist/viewer.css';
+// import VueViewer from 'v-viewer';
 import Vue3Lottie from 'vue3-lottie';
 import 'vue3-lottie/dist/style.css';
-import VueViewer from 'v-viewer';
 import App from './App.vue';
 import router from './router';
 import store from './store';
@@ -18,7 +18,7 @@ export const app = createApp(App);
 app.use(router)
   .use(store)
   .use(vuetify)
-  .use(VueViewer)
+  // .use(VueViewer)
   .use(vfmPlugin({
     key: '$vfm',
     componentName: 'VueFinalModal',
