@@ -231,7 +231,7 @@ export default {
         <div class="storyTextDiv"><p class="storyText">검은머리 (찬)무뿌리 될 때까지<br>행복하고 재미있게 잘 살겠습니다!!</p></div>
       </div>
       <div class="box box8 horizon_box">
-        <img :src="require(`@/assets/storyImages/8.jpg`)" alt="8" class="storyEnd" loading="eager">
+        <img :src="require(`@/assets/storyImages/8.jpg`)" alt="8" class="storyImageVertical" loading="eager">
         <div class="storyTextDiv"><p class="storyText">기쁨과 설렘 가득한<br>그 시작을 함께 축복해 주세요</p></div>
       </div>
   </section>
@@ -250,8 +250,8 @@ section { position: relative; height: 100vh; width: 100vw; max-width: 550px; mar
 .storyImageVertical { height: 75vh; max-width: 100%; }
 .storyIamgeHorizon { width: 140vmin; max-height: 80vh; }
 .storyEnd { height: 85vh; max-width: 100%;}
-.storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; line-height: 150%;}
-.storyTextDiv { height: 10%; margin-top: 3vh;}
+.storyText { font-family: 'KimNamyun';  font-size: 3vh; text-align: center; line-height: 150%; height: 100%;}
+.storyTextDiv { height: 15vh; margin-top: 3vh; overflow: visible;}
 </style>
 
 <!--<style>-->

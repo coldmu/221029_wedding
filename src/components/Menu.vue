@@ -81,9 +81,9 @@ export default {
   top:0;
   left:0;
   right: 0;
-  margin: 0 auto;
-  padding-top: 10px;
-  height: 40px;
+  margin: 0 auto 0 auto;
+  padding: 10px 0 0 0;
+  height: 50px;
   background: #fff;
   z-index:1000;
 }

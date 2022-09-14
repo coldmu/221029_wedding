@@ -4,6 +4,8 @@
       <p class="contentSubTitle">Contact</p>
       <p class="contentTitle">마음 전하실 곳</p>
     </div>
+    <p class="infoText">아래 사진을 클릭하시면<br>
+    연락처 및 계좌를 확인하실 수 있습니다</p>
     <div class="contactBtn">
       <div class="leftBtn">
         <div class="upperBtn">
@@ -42,16 +44,57 @@
         </div>
      </div>
     </div>
-    <p class="small">위 사진을 클릭하시면 계좌번호를 확인하실 수 있습니다</p>
-    <div class="btnFrame">
-      <v-btn @click="sendKakao" class="kakaoBtn" >청첩장 카톡 공유</v-btn>
+    <div class="accountFrame">
+      <button @click="AccountOpen = !AccountOpen" class="AccountBtn">계좌번호 확인하기</button>
+<!--      <transition name="fade">-->
+      <v-expand-transition>
+        <v-card class="AccountContainer" v-show="AccountOpen" elevation="0">
+          <div><p class="accountTitle">신랑측</p>
+            <div class="AccountInformation">
+              <p>{{contactInfo.chanmu.account}}</p>
+              <div class="contactModalButton">
+                <button class="accountCopyBtn" @click="copyAccountNum = contactInfo['chanmu'].accountNum; handleCopy(copyAccountNum); showOutsideAccountCopyModal = true;">복사</button>
+              </div>
+            </div>
+            <div class="AccountInformation">
+              <p>{{contactInfo.c_dad.account}}</p>
+              <div class="contactModalButton">
+                <button class="accountCopyBtn" @click="copyAccountNum = contactInfo['c_dad'].accountNum; handleCopy(copyAccountNum); showOutsideAccountCopyModal = true;">복사</button>
+              </div>
+            </div>
+          </div>
+          <div><p class="accountTitle">신부측</p>
+            <div class="AccountInformation">
+              <p>{{contactInfo.hyejin.account}}</p>
+              <div class="contactModalButton">
+                <button class="accountCopyBtn" @click="copyAccountNum = contactInfo['hyejin'].accountNum; handleCopy(copyAccountNum); showOutsideAccountCopyModal = true;">복사</button>
+              </div>
+            </div>
+            <div class="AccountInformation">
+              <p>{{contactInfo.h_dad.account}}</p>
+              <div class="contactModalButton">
+                <button class="accountCopyBtn" @click="copyAccountNum = contactInfo['h_dad'].accountNum; handleCopy(copyAccountNum); showOutsideAccountCopyModal = true;">복사</button>
+              </div>
+            </div>
+            <div class="AccountInformation">
+              <p>{{contactInfo.h_mom.account}}</p>
+              <div class="contactModalButton">
+                <button class="accountCopyBtn" @click="copyAccountNum = contactInfo['h_mom'].accountNum; handleCopy(copyAccountNum); showOutsideAccountCopyModal = true;">복사</button>
+              </div>
+            </div>
+          </div>
+        </v-card>
+<!--      </transition>-->
+        </v-expand-transition>
     </div>
+<!--    <div class="btnFrame">-->
+<!--      <v-btn @click="sendKakao" class="kakaoBtn" >청첩장 카톡 공유</v-btn>-->
+<!--    </div>-->
   </section>
-
   <vue-final-modal v-model="showModal" classes="modal-container" content-class="modal-content"
-                   :fit-parent="true">
-    <button class="modal__close" @click="showModal = false;">
-      <mdi-close></mdi-close>
+                   :fit-parent="true" :esc-to-close="true">
+    <button class="modal__close" @click="confirm">
+      <v-icon>mdi-close</v-icon>
     </button>
     <div class="contactModalFrame">
       <img :src="contactInfo[contactPerson].url" alt="1" class="contactImg">
@@ -79,38 +122,34 @@
         <button class="copyBtn" @click="handleCopy('account'); showAccountCopyModal = true">복사하기</button>
       </div>
     </div>
+    <div class="modal__action">
+      <v-btn @click="confirm"><b>확인</b></v-btn>
+    </div>
   </vue-final-modal>
 
   <!-- Second modal - account -->
   <vue-final-modal v-model="showAccountCopyModal" classes="modal-container" content-class="modal-copy-content"
                    :fit-parent="true">
-    <button class="modal__close" @click="showAccountCopyModal = false;">
-      <mdi-close></mdi-close>
-    </button>
     <div class="copyModalFrame">
       <p><strong>{{ contactInfo[contactPerson].accountNum }} </strong></p>
       <p>계좌번호가 복사되었습니다.</p>
     <div class="modal__action">
       <v-btn small elevation="1" @click="confirm">확인</v-btn>
-<!--      <v-button @click="confirm">확인</v-button>-->
     </div>
     </div>
   </vue-final-modal>
 
-  <!-- Second modal - phone -->
-  <vue-final-modal v-model="showPhoneCopyModal" classes="modal-container" content-class="modal-copy-content"
+  <!-- Second modal - account(Outside-fixed) -->
+  <vue-final-modal v-model="showOutsideAccountCopyModal" classes="modal-container" content-class="modal-copy-content"
                    :fit-parent="true">
-    <button class="modal__close" @click="showPhoneCopyModal = false;">
-      <mdi-close></mdi-close>
-    </button>
     <div class="copyModalFrame">
-      <p><strong>{{ contactInfo[contactPerson].phone }}</strong> 복사되었습니다.</p>
-    <div class="modal__action">
-      <v-button @click="confirm">확인</v-button>
-    </div>
+      <p><strong>{{ copyAccountNum }} </strong></p>
+      <p>계좌번호가 복사되었습니다.</p>
+      <div class="modal__action">
+        <v-btn small elevation="1" @click="confirm">확인</v-btn>
+      </div>
     </div>
   </vue-final-modal>
-
 </template>
 
 <script>
@@ -151,16 +190,9 @@ export default {
         // text 타입을 hidden으로 변경한다.
         inputAccountNum.value.setAttribute('type', 'hidden');
         // alert(`계좌번호 '${inputAccountNum.value.value}' 만 복사 되었습니다.\n은행명: '${inputAccountBank.value.value}', 계좌주: '${inputAccountName.value.value}' 는 기억해주세요!`);
-      } else if (param === 'phone') {
-        // hidden이었던 input의 타입을 text로 변경한다.
-        inputPhone.value.setAttribute('type', 'text');
-        // input을 선택한다.
-        inputPhone.value.select();
-        // 복사를 수행한다.
-        document.execCommand('copy');
-        // text 타입을 hidden으로 변경한다.
-        inputPhone.value.setAttribute('type', 'hidden');
-        // alert(`'${inputPhone.value.value}'  복사 되었습니다.`);
+      } else {
+        param.execCommand('copy');
+        alert('복사 되었습니다.');
       }
     };
 
@@ -177,9 +209,9 @@ export default {
         navigator.clipboard.writeText(inputAccountNum.value.value)
           // .then(() => alert(`계좌번호: '${inputAccountNum.value.value}' 만 복사 되었습니다.\n은행명: '${inputAccountBank.value.value}', 계좌주: '${inputAccountName.value.value}' 는 기억해주세요!`))
           .catch(() => handleCopyForIE(param));
-      } else if (param === 'phone') {
-        navigator.clipboard.writeText(inputPhone.value.value)
-          // .then(() => alert(`'${inputPhone.value.value}'  복사 되었습니다.`))
+      } else {
+        navigator.clipboard.writeText(param)
+        // .then(() => alert(`'${inputPhone.value.value}'  복사 되었습니다.`))
           .catch(() => handleCopyForIE(param));
       }
     };
@@ -198,6 +230,7 @@ export default {
       this.showPhoneCopyModal = false;
       this.showAccountCopyModal = false;
       this.showModal = false;
+      this.showOutsideAccountCopyModal = false;
     },
   },
   data() {
@@ -205,7 +238,10 @@ export default {
       showModal: false,
       showPhoneCopyModal: false,
       showAccountCopyModal: false,
+      showOutsideAccountCopyModal: false,
       contactPerson: 'chanmu',
+      copyAccountNum: '3333010949812',
+      AccountOpen: false,
       contactInfo: {
         chanmu: {
           // eslint-disable-next-line
@@ -222,37 +258,37 @@ export default {
           url: require(`@/assets/images/c_dad.jpg`),
           name: '아버지 양준희',
           phone: '010-5545-8773',
-          account: '은행 123123123 (양준희)',
-          accountNum: '123123123',
-          accountBank: '농협은행',
-          accountName: '양찬무',
+          account: '하나은행 131-910334-33607 (양준희)',
+          accountNum: '13191033433607',
+          accountBank: '하나은행',
+          accountName: '양준희',
         },
         c_mom: {
           // eslint-disable-next-line
           url: require(`@/assets/images/c_mom.jpg`),
           name: '어머니 오옥순',
           phone: '010-5525-8773',
-          account: '은행 123123123 (양준희)',
-          accountNum: '123123123',
-          accountBank: '농협은행',
-          accountName: '양찬무',
+          account: '하나은행 131-910334-33607 (양준희)',
+          accountNum: '13191033433607',
+          accountBank: '하나은행',
+          accountName: '양준희',
         },
         hyejin: {
           // eslint-disable-next-line
           url: require(`@/assets/images/hyejin.jpg`),
           name: '신부 박혜진',
           phone: '010-5125-8793',
-          account: '은행 123123123 (박혜진)',
-          accountNum: '123123123',
-          accountBank: '농협은행',
-          accountName: '양찬무',
+          account: '카카오뱅크 3333-15-3561791 (박혜진)',
+          accountNum: '3333153561791',
+          accountBank: '카카오뱅크',
+          accountName: '박혜진',
         },
         h_dad: {
           // eslint-disable-next-line
           url: require(`@/assets/images/h_dad.jpg`),
           name: '아버지 박석곤',
           phone: '010-9878-8793',
-          account: '경남은행 531210000232 (박석곤)',
+          account: '경남은행 531-21-0000232 (박석곤)',
           accountNum: '531210000232',
           accountBank: '경남은행',
           accountName: '박석곤',
@@ -262,7 +298,7 @@ export default {
           url: require(`@/assets/images/h_mom.jpg`),
           name: '어머니 유미영',
           phone: '010-7288-8793',
-          account: '단위농협 3561381572913 (유미영)',
+          account: '단위농협 356-1381-5729-13 (유미영)',
           accountNum: '3561381572913',
           accountBank: '단위농협',
           accountName: '유미영',
@@ -399,7 +435,26 @@ export default {
   text-align: center;
   /*margin: 2px 0;*/
 }
-
+.accountCopyBtn {
+  height: 1.8rem;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: 0;
+  border-radius: 5px;
+  background: #FD8E5A;
+  display: inline-block;
+  color: #fff;
+  font-family: 'Cafe24Oneprettynight';
+  text-align: center;
+  /*margin: 2px 0;*/
+}
+.accountFrame{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
+}
 .copyConfirmBtn{
   font-size: 0.8rem;
   padding: 0px;
@@ -409,19 +464,6 @@ a {text-decoration: none;}
 .btnFrame{
   display: flex;
   justify-content: center;
-}
-.kakaoBtn{
-  border: 0;
-  background: #fce445;
-  border-radius: 5px;
-  font-family: 'Cafe24Oneprettynight';
-  font-weight: 800;
-  color: #202121;
-  padding: 10px 20px;
-  /*width:100%;*/
-  margin:15px auto;
-  margin-bottom:50px;
-  text-align:center;
 }
 ::v-deep .modal-container {
   display: flex;
@@ -467,7 +509,10 @@ a {text-decoration: none;}
   top: 0.5rem;
   right: 0.5rem;
 }
-
+.v-btn{
+  width: 25px;
+  height: 25px;
+}
 .horizontalLine{
   width:100%;
   height:1px;
@@ -478,6 +523,49 @@ a {text-decoration: none;}
 }
 </style>
 
-<style>
+<style lang="scss" rel="stylesheet/scss" scoped>
+.AccountBtn{
+  border: 0;
+  //font-size: 1.1rem;
+  background: #d5a891;
+  border-radius: 5px;
+  font-family: 'Cafe24Oneprettynight';
+  //font-weight: 600;
+  color: #fff;
+  padding: 10px 20px;
+  /*width: 500px;*/
+  margin:30px auto;
+  margin-bottom:50px;
+  text-align:center;
+}
+.AccountContainer{
+  width: 95%;
+  align-self: center;
+}
+.accountTitle{
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top:20px;
+  margin-bottom:10px;
+}
+.AccountInformation{
+  width: 100%;
+  background: #f5f5f5;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
 
+p {
+  margin-left: 10px;
+}
+
+button {
+  margin-right: 10px;
+}
+}
 </style>

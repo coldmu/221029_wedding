@@ -1,15 +1,21 @@
 <template>
   <div id="scrollDown">
+    <p class="scroll_text">
+      화면을 천천히<br>
+      위로 올려주세요
+    </p>
     <Vue3Lottie :animationData="SwipeJSON" :height="200" :width="180"></Vue3Lottie>
   </div>
 
   <div id="kakaoShare">
     <v-btn
-      color="#fce445aa"
+      color="#fce445ee"
       icon="mdi-share-variant-outline"
       size="small"
       @click="sendKakao"
+      class="kakaoShareBtn"
     ></v-btn>
+    <p class="kakaoShareText">카톡 공유하기</p>
   </div>
 </template>
 
@@ -58,30 +64,36 @@ export default {
   /*display: flex;*/
   /*flex-direction: column;*/
   /*align-items: center;*/
-  bottom: 30px; /* 아래 끝에서부터의 거리 */
-  right: -30px; /* 오른쪽 끝에서부터의 거리 */
+  bottom: 45px; /* 아래 끝에서부터의 거리 */
+  right: -24px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
-}
-
-.scrolldown_img{
-  width: 20vw;
 }
 
 .scroll_text{
   text-align: center;
-  font-size: 3vw;
+  font-size: 20px;
   font-weight: 600;
+  margin-bottom: -50px;
 }
 
 #kakaoShare{
   position: fixed;
-  bottom: 30px; /* 아래 끝에서부터의 거리 */
-  right: 25px; /* 오른쪽 끝에서부터의 거리 */
+  bottom: 15px; /* 아래 끝에서부터의 거리 */
+  right: 10px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  justify-items: center;
+}
+.kakaoShareText{
+  margin-top: 5px;
+  text-align: center;
+  font-weight: 700;
 }
 
 .kakaoShareBtn{
-  background: #fce445;
-  border-radius: 9999px;
+  align-self: center;
 }
 </style>

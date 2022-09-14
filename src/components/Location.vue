@@ -6,7 +6,7 @@
     </div>
 
     <div id="map" @click="openMap" @keydown="openMap"></div>
-    <p class="small">지도를 클릭하시면 카카오 맵으로 연결됩니다</p>
+    <p class="infoText">지도를 클릭하시면 카카오 맵으로 연결됩니다</p>
 
     <div class="title">
       <p>2022년 10월 29일 토요일 오후 12시 30분</p>

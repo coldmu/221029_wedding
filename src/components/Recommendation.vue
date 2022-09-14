@@ -5,9 +5,11 @@
       <p class="contentTitle">추천 여행지</p>
     </div>
     <div class="content">
-      <p>먼 길, 귀한 걸음 와주셔서 정말 감사합니다</p>
-      <p>울산 및 근교 여행지 추천드립니다</p>
-      <p>찌니♥무 의 추천 여행지 및 맛집 리스트</p>
+      <p>먼 길 와주셔서 정말 감사합니다</p>
+      <p>혜진♥찬무의 울산을 소개합니다</p>
+      <p>아래 버튼을 클릭하시면</p>
+      <p>울산 추천 여행지 및 맛집을</p>
+      <p>확인하실 수 있습니다</p>
       <v-btn href="http://kko.to/W3We5Z56L" class="RecommendBtn">울산 핫플로 GO! 🚗🚢🚋</v-btn>
 
     </div>
