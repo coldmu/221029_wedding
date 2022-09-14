@@ -37,8 +37,8 @@ export default {
     return {
       images: [
         { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (1).jpg', width: 1080, height: 1620 },
-        { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (2).jpg', width: 1080, height: 1620 },
-        { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (3).jpg', width: 1080, height: 1620 },
+        { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery(2).jpg', width: 1080, height: 1620 },
+        { URL: 'http://coldmu.asuscomm.com:5080/test/test.jpg', width: 1080, height: 1620 },
         { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (4).jpg', width: 1080, height: 1620 },
         { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (5).jpg', width: 1620, height: 1080 },
         { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (6).jpg', width: 1620, height: 1080 },
