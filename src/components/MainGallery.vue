@@ -5,7 +5,10 @@
       <p class="contentTitle">사진첩</p>
       <p class="infoText"> 아래 사진을 클릭하시면 크게 보실 수 있습니다</p>
     </div>
-
+    TEST1
+    <img src='http://coldmu.asuscomm.com:5080/gallery/gallery (1).jpg' alt="test">
+    TEST2
+    <img :src="require(`@/assets/galleryImages/gallery (1).jpg`)" alt="test2">
     <div id="test" class="viewer">
       <figure class="images">
         <div v-for="(image, key) in images" :key="key" class="image-wrapper">
@@ -36,7 +39,7 @@ export default {
   data() {
     return {
       images: [
-        { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (1).jpg', width: 1080, height: 1620 },
+        { URL: require(`@/assets/galleryImages/gallery (1).jpg`), width: 1080, height: 1620 },
         { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery(2).jpg', width: 1080, height: 1620 },
         { URL: 'http://coldmu.asuscomm.com:5080/test/test.jpg', width: 1080, height: 1620 },
         { URL: 'http://coldmu.asuscomm.com:5080/gallery/gallery (4).jpg', width: 1080, height: 1620 },
