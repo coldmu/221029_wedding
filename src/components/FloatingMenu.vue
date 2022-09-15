@@ -11,7 +11,7 @@
     <v-btn
       color="#fce445ee"
       icon="mdi-share-variant-outline"
-      size="small"
+      size="x-small"
       @click="sendKakao"
       class="kakaoShareBtn"
     ></v-btn>
@@ -64,16 +64,17 @@ export default {
   /*display: flex;*/
   /*flex-direction: column;*/
   /*align-items: center;*/
-  bottom: 45px; /* 아래 끝에서부터의 거리 */
-  right: -24px; /* 오른쪽 끝에서부터의 거리 */
+  bottom: 25px; /* 아래 끝에서부터의 거리 */
+  right: -30px; /* 오른쪽 끝에서부터의 거리 */
   z-index: 99;
 }
 
 .scroll_text{
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
-  margin-bottom: -50px;
+  margin-right: -15px;
+  margin-bottom: -60px;
 }
 
 #kakaoShare{
@@ -90,7 +91,8 @@ export default {
 .kakaoShareText{
   margin-top: 5px;
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 .kakaoShareBtn{

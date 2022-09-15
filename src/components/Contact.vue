@@ -194,7 +194,7 @@ export default {
         alert('IE 복사 시작었습니다.');
 
         // 임시의 textarea 생성
-        const textarea = document.createElement("textarea");
+        const textarea = document.createElement('textarea');
 
         // body 요소에 존재해야 복사가 진행됨
         document.body.appendChild(textarea);
