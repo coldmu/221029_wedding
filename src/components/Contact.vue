@@ -191,8 +191,6 @@ export default {
         inputAccountNum.value.setAttribute('type', 'hidden');
         // alert(`계좌번호 '${inputAccountNum.value.value}' 만 복사 되었습니다.\n은행명: '${inputAccountBank.value.value}', 계좌주: '${inputAccountName.value.value}' 는 기억해주세요!`);
       } else {
-        alert('IE 복사 시작었습니다.');
-
         // 임시의 textarea 생성
         const textarea = document.createElement('textarea');
 
@@ -225,7 +223,7 @@ export default {
           .catch(() => handleCopyForIE(param));
       } else {
         navigator.clipboard.writeText(param)
-          .then(() => alert(`'${param}'  복사 되었습니다.`))
+          // .then(() => alert(`'${param}'  복사 되었습니다.`))
           .catch(() => handleCopyForIE(param));
       }
     };
