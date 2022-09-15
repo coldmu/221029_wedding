@@ -191,7 +191,8 @@ export default {
         inputAccountNum.value.setAttribute('type', 'hidden');
         // alert(`계좌번호 '${inputAccountNum.value.value}' 만 복사 되었습니다.\n은행명: '${inputAccountBank.value.value}', 계좌주: '${inputAccountName.value.value}' 는 기억해주세요!`);
       } else {
-        param.execCommand('copy');
+        const temp = param;
+        temp.execCommand('copy');
         alert('복사 되었습니다.');
       }
     };
