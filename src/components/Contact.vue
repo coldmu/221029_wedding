@@ -108,16 +108,16 @@
     </div>
     <div class="none"></div>
     <div class="contactModalPhone">
-      <p class="contactModalText">전화번호</p>
-      <p class="contactModalText">{{ contactInfo[contactPerson].phone }}</p>
+      <p class="contactModalText1">전화번호</p>
+      <p class="contactModalText2">{{ contactInfo[contactPerson].phone }}</p>
       <div class="contactModalButton">
         <a class="callBtn" :href="`tel:${contactInfo[contactPerson].phone}`">전화하기</a>
       </div>
     </div>
     <div class="horizontalLine"></div>
     <div class="contactModalPhone">
-      <p class="contactModalText">계좌번호</p>
-      <p class="contactModalText">{{ contactInfo[contactPerson].account }}</p>
+      <p class="contactModalText1">계좌번호</p>
+      <p class="contactModalText2">{{ contactInfo[contactPerson].account }}</p>
       <div class="contactModalButton">
         <button class="copyBtn" @click="handleCopy('account'); showAccountCopyModal = true">복사하기</button>
       </div>
@@ -351,21 +351,27 @@ export default {
   display: flex;
   width:100%;
   /*justify-content: space-between;*/
-  justify-content: space-between;
-  align-items: center;
   /*margin-top:5px;*/
   margin: 5px 0;
 }
-.contactModalText{
+.contactModalText1{
   font-size:0.9rem;
   margin:0;
+  min-width: 55px;
   /*font-weight: bold;*/
+}
+.contactModalText2{
+  flex-grow: 1;
+  font-size:0.9rem;
+  margin:0;
+  text-align: center;
 }
 .contactModalButton{
   display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  min-width: 68px;
 }
 .upperBtn {display:flex;
   justify-content: center;
