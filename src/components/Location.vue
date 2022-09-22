@@ -15,6 +15,10 @@
       <p>052) 291-5500</p>
     </div>
 
+    <div class="locationContent">
+      <p>KTX / SRT 이용 시 <span class="station">울산(통도사) 역</span> 하차 후,</p>
+      <p>3번 출구로 나오시면 도보 5분 소요됩니다</p>
+    </div>
     <div class="timetableFrame">
       <img :src="require(`@/assets/images/timetable.png`)" alt="timetable" class="timetable_img">
     </div>
@@ -87,7 +91,7 @@ export default {
   /*border-style: solid;*/
   /*border-color: #666;*/
   /*border: 0.1em solid #666666;*/
-  box-shadow: 5px 10px 8px #666666;
+  box-shadow: 0px 8px 16px rgb(71 65 50 / 25%);
 }
 
 .small{
@@ -126,4 +130,22 @@ export default {
   justify-content: center;
 }
 
+.locationContent {
+  margin-top: 50px;
+  text-align: center;
+  margin-bottom: -15px;
+  font-size: 100%;
+  font-weight: 500;
+}
+
+.locationContent p{
+  display: block;
+  margin-bottom:10px;
+}
+
+.station{
+  font-weight: 600;
+  //text-decoration: underline;
+  color: #e7783d;
+}
 </style>
