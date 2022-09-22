@@ -78,7 +78,7 @@ export default {
   max-width: 550px;
   padding: 0 1%;
   margin-top: 50px;
-  overflow: hidden;
+  overflow: visible;
 }
 
 #map{
